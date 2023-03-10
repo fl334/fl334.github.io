@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Networks Beginning | Fl_334's Bin_Blog</title><meta name="author" content="Fl_334"><meta name="copyright" content="Fl_334"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Simple Quick Intro Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Networks Beginning">
+<meta property="og:url" content="http://fl334.github.io/2023/01/26/Computer%20Networks/index.html">
+<meta property="og:site_name" content="Fl_334&#39;s Bin_Blog">
+<meta property="og:description" content="Simple Quick Intro Notes">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png">
+<meta property="article:published_time" content="2023-01-26T22:10:15.000Z">
+<meta property="article:modified_time" content="2023-03-10T11:42:46.526Z">
+<meta property="article:author" content="Fl_334">
+<meta property="article:tag" content="新月級">
+<meta property="article:tag" content="Computer Network">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png"><link rel="shortcut icon" href="/img/avatar.GIF"><link rel="canonical" href="http://fl334.github.io/2023/01/26/Computer%20Networks/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"Author: Fl_334","link":"Link: ","source":"Source: Fl_334's Bin_Blog","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Networks Beginning',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-10 11:42:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#6633FF')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js"></script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/map/js/china.min.js"></script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/12/26/Hp4BugrivUDTLb7.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/artitalk/"><i class="fa-fw fas fa-thin fa-pen"></i><span> Awu</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Fl_334's Bin_Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/artitalk/"><i class="fa-fw fas fa-thin fa-pen"></i><span> Awu</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Networks Beginning</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-01-26T22:10:15.000Z" title="Created 2023-01-26 22:10:15">2023-01-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-03-10T11:42:46.526Z" title="Updated 2023-03-10 11:42:46">2023-03-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Computer-Network/">Computer Network</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>3min</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Just a quick intro. He would update it after 10000 years.<br>At least Baike is friendly to this Rubbish.</p>
+<h1 id="Computer-Network-Classification"><a href="#Computer-Network-Classification" class="headerlink" title="Computer Network Classification"></a>Computer Network Classification</h1><h2 id="Classified-by-Network-Typology"><a href="#Classified-by-Network-Typology" class="headerlink" title="Classified by Network Typology"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84?fromModule=lemma_search-box">Classified by Network Typology</a></h2><h3 id="bus"><a href="#bus" class="headerlink" title="bus"></a>bus</h3><h3 id="ring"><a href="#ring" class="headerlink" title="ring"></a>ring</h3><p>apply tokens to communicate</p>
+<h3 id="star"><a href="#star" class="headerlink" title="star"></a>star</h3><p>The central node is under high pressure</p>
+<h3 id="mesh"><a href="#mesh" class="headerlink" title="mesh"></a>mesh</h3><h2 id="Classified-by-Areas"><a href="#Classified-by-Areas" class="headerlink" title="Classified by Areas"></a>Classified by Areas</h2><h3 id="LAN-Local"><a href="#LAN-Local" class="headerlink" title="LAN Local"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B1%80%E5%9F%9F%E7%BD%91/98626?fromModule=lemma-qiyi_sense-lemma&fromtitle=LAN&fromid=295610">LAN</a> Local</h3><h3 id="MAN-Metropolitan"><a href="#MAN-Metropolitan" class="headerlink" title="MAN Metropolitan"></a><a href="">MAN</a> Metropolitan</h3><h3 id="WAN-Wide"><a href="#WAN-Wide" class="headerlink" title="WAN Wide"></a><a href="">WAN</a> Wide</h3><h2 id="Network-Equipment"><a href="#Network-Equipment" class="headerlink" title="Network Equipment"></a>Network Equipment</h2><h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532?fr=aladdin">Switch</a></h3><p>Set up the LAN<br>MAC</p>
+<h3 id="Router"><a href="#Router" class="headerlink" title="Router"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8/108294?fr=aladdin">Router</a></h3><p>Set up the WAN<br>IP</p>
+<h2 id="Network-Model"><a href="#Network-Model" class="headerlink" title="Network Model"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/239980?fr=aladdin">Network Model</a></h2><h3 id="Open-System-Interconnect"><a href="#Open-System-Interconnect" class="headerlink" title="Open System Interconnect"></a>Open System Interconnect</h3><p><img src="/img/OSI_02.gif"></p>
+<h4 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h4><p>建立、维护、断开物理连接，提供有关同步和比特流在物理媒体上的传输手段。<br>设备：网卡，网线，集线器，中继器，调制解调器</p>
+<h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p>建立逻辑连接、进行硬件地址寻址、差错校验等功能。<br>将比特组合成字节进而组合成帧，用MAC地址访问介质，错误发现但不能纠正。<br>设备：网桥，交换机</p>
+<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>进行逻辑地址寻址，实现不同网络之间的路径选择。<br>协议有：ICMP IGMP IP（IPV4 IPV6） ARP RARP<br>设备：路由器</p>
+<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p>定义传输数据的协议端口号，以及流控和差错校验。<br>协议有：TCP UDP，数据包一旦离开网卡即进入网络传输层</p>
+<h4 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h4><p>建立、管理、终止会话。<br>对应主机进程，指本地主机与远程主机正在进行的会话</p>
+<h4 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h4><p>数据的表示、安全、压缩。<br>格式有：JPEG、ASCll、DECOIC、加密格式等</p>
+<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>网络服务与最终用户的一个接口。<br>协议有：HTTP FTP TFTP SMTP SNMP DNS TELNET HTTPS POP3 DHCP</p>
+<h3 id="TCP-x2F-ITC"><a href="#TCP-x2F-ITC" class="headerlink" title="TCP&#x2F;ITC"></a>TCP&#x2F;ITC</h3><p><img src="/img/TCP:IP_01.png"><br><img src="/img/TCP:IP_02.png"><br>合并物理层与数据链路层 &amp;&amp; 合并会话层，表示层，应用层</p>
+<h4 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h4><p>有时也称作数据链路层或网络接口层，<br>通常包括操作系统中的设备驱动程序和计算机中对应的网络接口卡。<br>它们一起处理与电缆(或其他任何传输媒介)的物理接口细节。</p>
+<h4 id="网络层（互联网层）"><a href="#网络层（互联网层）" class="headerlink" title="网络层（互联网层）"></a>网络层（互联网层）</h4><p>处理分组在网络中的活动，例如分组的选路。<br>协议：IP协议(网际协议)，ICMP协议(Internet互联网控制报文协议），以及IGMP协议(Internet组管理协议 )。</p>
+<h4 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h4><p>主要为两台主机上的应用程序提供端到端的通信。<br>协议 : TCP (传输控制协议) 和UDP (用户数据报协议)。<br><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/TCP">TCP</a>：为两台主机提供高可靠性的数据通信，将应用程序交给它的数据分成合适的小块交给下面的网络层，<br>     确认接收到的分组，设置发送最后确认分组的超时时钟等。<br>     由于运输层提供了高可靠性的端到端的通信，因此应用层可以忽略所有这些细节。<br><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/UDP">UDP</a>：为应用层提供一种非常简单的服务，只是把称作数据报的分组从一台主机发送到另一台主机，但并不保证该数据报能到达另一端，任何必需的可靠性必须由应用层来提供。<br>区别：<br>1、TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接<br>2、TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保证可靠交付<br>   TCP通过校验和，重传控制，序号标识，滑动窗口、确认应答实现可靠传输。如丢包时的重发控制，还可以对次序乱掉的分包进行顺序控制。<br>3、UDP具有较好的实时性，工作效率比TCP高，适用于对高速传输和实时性有较高的通信或广播通信。<br>4、每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信<br>5、TCP对系统资源要求较多，UDP对系统资源要求较少。</p>
+<h4 id="应用层-1"><a href="#应用层-1" class="headerlink" title="应用层"></a>应用层</h4><p>负责处理特定的应用程序细节。几乎各种不同的 TCP&#x2F;IP实现都会提供下面这些通用的应用程序:<br>Telnet 远程登录。<br>FTP 文件传输协议。<br>SMTP 简单邮件传送协议。<br>SNMP 简单网络管理协议。</p>
+<h1 id="To-do"><a href="#To-do" class="headerlink" title="To-do"></a>To-do</h1><p><font color=red> 233</font></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://fl334.github.io">Fl_334</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://fl334.github.io/2023/01/26/Computer%20Networks/">http://fl334.github.io/2023/01/26/Computer%20Networks/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%96%B0%E6%9C%88%E7%B4%9A/">新月級</a><a class="post-meta__tags" href="/tags/Computer-Network/">Computer Network</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/27/py_modules_01/"><img class="prev-cover" src="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Py modules 01</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/23/CSS%20&amp;%20HTML5/"><img class="next-cover" src="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">FE-0</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/01/23/CSS%20&%20HTML5/" title="FE-0"><img class="cover" src="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-23</div><div class="title">FE-0</div></div></a></div><div><a href="/2023/01/21/Git/" title="Git"><img class="cover" src="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-21</div><div class="title">Git</div></div></a></div><div><a href="/2023/01/28/ML_libraries/" title="ML libraries"><img class="cover" src="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-28</div><div class="title">ML libraries</div></div></a></div><div><a href="/2023/01/28/Operating-Systems/" title="Operating-Systems"><img class="cover" src="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-28</div><div class="title">Operating-Systems</div></div></a></div><div><a href="/2023/01/23/Shell/" title="Shell"><img class="cover" src="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-23</div><div class="title">Shell</div></div></a></div><div><a href="/2023/01/27/py_modules_01/" title="Py modules 01"><img class="cover" src="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-27</div><div class="title">Py modules 01</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/12/26/Hp4BugrivUDTLb7.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fl_334</div><div class="author-info__description">日々にシフト</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">13</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fl334" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:flames3340912@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">New to Coding~ Yoroshiku~((>﹏<))</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Computer-Network-Classification"><span class="toc-number">1.</span> <span class="toc-text">Computer Network Classification</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Classified-by-Network-Typology"><span class="toc-number">1.1.</span> <span class="toc-text">Classified by Network Typology</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bus"><span class="toc-number">1.1.1.</span> <span class="toc-text">bus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ring"><span class="toc-number">1.1.2.</span> <span class="toc-text">ring</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#star"><span class="toc-number">1.1.3.</span> <span class="toc-text">star</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mesh"><span class="toc-number">1.1.4.</span> <span class="toc-text">mesh</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classified-by-Areas"><span class="toc-number">1.2.</span> <span class="toc-text">Classified by Areas</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LAN-Local"><span class="toc-number">1.2.1.</span> <span class="toc-text">LAN Local</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MAN-Metropolitan"><span class="toc-number">1.2.2.</span> <span class="toc-text">MAN Metropolitan</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WAN-Wide"><span class="toc-number">1.2.3.</span> <span class="toc-text">WAN Wide</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Network-Equipment"><span class="toc-number">1.3.</span> <span class="toc-text">Network Equipment</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Switch"><span class="toc-number">1.3.1.</span> <span class="toc-text">Switch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Router"><span class="toc-number">1.3.2.</span> <span class="toc-text">Router</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Network-Model"><span class="toc-number">1.4.</span> <span class="toc-text">Network Model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Open-System-Interconnect"><span class="toc-number">1.4.1.</span> <span class="toc-text">Open System Interconnect</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">1.4.1.4.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E5%B1%82"><span class="toc-number">1.4.1.5.</span> <span class="toc-text">会话层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E7%A4%BA%E5%B1%82"><span class="toc-number">1.4.1.6.</span> <span class="toc-text">表示层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">1.4.1.7.</span> <span class="toc-text">应用层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-x2F-ITC"><span class="toc-number">1.4.2.</span> <span class="toc-text">TCP&#x2F;ITC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">链路层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%E5%B1%82%EF%BC%89"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">网络层（互联网层）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%BE%93%E5%B1%82"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">运输层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82-1"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">应用层</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#To-do"><span class="toc-number">2.</span> <span class="toc-text">To-do</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By Fl_334</div><div class="footer_custom_text">Mi-Pa!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = '/pluginsSrc/mathjax/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="/pluginsSrc/katex/dist/katex.min.css"><script src="/pluginsSrc/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script>(function(d, w, c) {
+    w.ChatraID = 'kdzLnTG5WTwLxSuLA';
+    var s = d.createElement('script');
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+    };
+    s.async = true;
+    s.src = 'https://call.chatra.io/chatra.js';
+    if (d.head) d.head.appendChild(s);
+})(document, window, 'Chatra');
+
+if (true) {
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      Chatra('openChat')
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      Chatra('hide')
+    }
+    function chatBtnShow () {
+      Chatra('show')
+    }
+  }
+}</script></div></body></html>

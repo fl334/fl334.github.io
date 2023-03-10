@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>linux | Fl_334's Bin_Blog</title><meta name="author" content="Fl_334"><meta name="copyright" content="Fl_334"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux~~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux">
+<meta property="og:url" content="http://fl334.github.io/2023/02/25/linux/index.html">
+<meta property="og:site_name" content="Fl_334&#39;s Bin_Blog">
+<meta property="og:description" content="Linux~~">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png">
+<meta property="article:published_time" content="2023-02-25T17:45:58.000Z">
+<meta property="article:modified_time" content="2023-03-10T11:42:46.526Z">
+<meta property="article:author" content="Fl_334">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png"><link rel="shortcut icon" href="/img/avatar.GIF"><link rel="canonical" href="http://fl334.github.io/2023/02/25/linux/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"Author: Fl_334","link":"Link: ","source":"Source: Fl_334's Bin_Blog","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'linux',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-10 11:42:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#6633FF')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js"></script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/map/js/china.min.js"></script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/12/26/Hp4BugrivUDTLb7.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">13</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/artitalk/"><i class="fa-fw fas fa-thin fa-pen"></i><span> Awu</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Fl_334's Bin_Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/artitalk/"><i class="fa-fw fas fa-thin fa-pen"></i><span> Awu</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">linux</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-02-25T17:45:58.000Z" title="Created 2023-02-25 17:45:58">2023-02-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-03-10T11:42:46.526Z" title="Updated 2023-03-10 11:42:46">2023-03-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">3</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>1min</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="5b17cad5cea3d7d9581c723fb9d96abf2d7e8d1f548490453e5e087e39072d96">6c3123a1b42250d902894503e5bdf92d914f1e3ae9c77fb86573700c657da40a126cd10adcc143cf724cdef6e82c81eaa34c581c4bb672da55d58d00bd1fb6f1f20319045b92619e71decc70586ff4aa139b219edadb48027252d9b767abaaa12510d029dba04eaee9a0b8a6f01be040918734228fdf8fc02492309ab07929100c4ce76325f30b298960954238642fd9b27591ed6a356c5afaa00b6e20efeabec4abf4d7ae1cd640df3ce5321c46078cce84c3bf75756574d8dec9cf67fc95620e77bd303e4500e4314c91c94b856d8900e10fc7a1a26f849374104f638f7413a2f719555d9fa2dd9df068b274ab73802dfb78d63b06392001e539e7e05ff12d9eafad95bc2bc10c54197d5b3173ff0c31f0677874004c6d18687f6f55ddb567096fb9048eba4249910fab27ae70535e44d155ae84bdc556c0beee021708d91cb32040daf8028bd852d7af1341c61ff8cc6c863ea5262844fcbf89d89f67289a1d47df456dfdce43cfb616a13f08eea39196a25b1f507f15cc1cb6d5d6c0ea2ed1ae04e09661763a325fd1f17e7b091b1af6e81aa7da6967dbd7ff770e9fab7e2806b18f04dff0032139cbca976783e2b24e4c5528e9e270de9ba3017e6df0cef57122f3ea2bf092f3cbb4d9a03a3406e5a7c610756e6b0a4547d80532868955bd4779c6c8afab3e0bdb84680b88e395612aa26aa7d57363a26bda33320a020bf6e0403bd90cb25bc79ef7c64deafcd6c81626c0bb941bfe4dec5cd090c4347fee02f1d41fedb43d1cec58aa8017483356e864766c75edf589f664d1916bed5edc3cfc77af44cf4ed4a6c9f3039c2fc1d37275d9a9b31e9bcf8a71bddb9f2b0eab67182c3d086139f3f4a64a75145a87e1184102c88f4e32a6cf1780622f05ad59689884758cdda8c6f399a4ba6e43a654238784d365682c42b31789ec6091c01dd154f86a561698fdaa833ff0099cf45bb4b7c552c054f9c711a157e6de9c4139e2f31f75269eb1b218926f2083ad9cd7cbf7b157a2013887b5b73b412115d778ef3a79475cad3b052e1c1bf5d27667bae19c1e65647dc51fd93ffb64c965ab58266e1c59df8bbdf7658f7bd176791d95092cf828fc58c72e6ab5799824a8e6980401daf8a60cd187694fe3bc57cb539ee0beaf5ebf625be78c9600a015a58c15d84341563b1f070448323ed7120dec9c590481fd096e64cc1a61e10b426620e77edcb90da4a840d761f0593d4b9ee0f3c4e4265677998da361b7bdf93538d45cdb39eb3f29ba6df7b41579f322185da33ebec03c99e06813474217c7dffdbc666dcdea7f00ab2a69c1070337d90fd17269606b9e1cb7864db5ac4198b9d92e223c1c7bab4784970fcaffaf6f187a12ed5212be25758bff3ff6308096c2a6a6ada19e7065250c78476e7be8a4967d78694296ca52a9c07f6094ebdeaa1b854dea6d0d1d8dc853a48c5d186dca457b2cdc82a8dd768504f3fbe0536e8cc01b4ebac2371c4d3fc18ff2669a11ea964b19b55631e1a32e793e61e3724d6385d08fa1c3822dd429142c127f2d5a5d9fb3d8229959bf8504fb2b06df531ed6b0a0e685ab915844135dbbc31f7f65db9e00ade8d027fa651fabbff1e447560d79a0eae9dd7624fbc460e623e437d2f66ef0c005748ff80e74ee59ece7929b05c6907981f55b66882b228163691d4a0b05d9c90b039df73fe8096afa68db58fa1cfc199c000105fd931d15387c73a20f8f5cb7bb2578fe3518bb2f2ad15bdb4581c492ca157f282c17b3c67e6a467c62db29195c65ddd034380ef85cb5723f9a0b11c2916e894c105623d151ed393574ca5525d04e7ee544e566dc2027e23215c49575cab690cd0b8c12b3316f8b3954f3977dde025bfcf660d5d44447308c35138d51f6aa08723b4f4c9146ecbcea320c2deb6805866ecff15cdd47191b7f4471e26077ba5ca2f1233091f7c9d1657dee48e8581fb9ab41cb0c8dc4982968687c9823ed7ba639a5eac9b45fe510d5f94849fa44f315a7d392cfc6221b980af9a87548d963877d19c36953efcba997bcc24054c90fea629b54d0ee96737d65757e247b3a46a3aeaa206e775cc1e4cc02e2ed1d0300fb0221e498fb8193a81d7613a3c7a96118793e719c0c7b931eec66a241ed0c3ccbbd79a9780ec6fa3009c8e26344924688bf37074175c0e335726d521d2db5fa6e4145fdbbd9607902fd21df2da246a9fc02069bb59095c2e373f81bb206f9335b09529489ce2c32cb297eafba9ce0c28d585c6a9c091debd7502dccc5b961442acac2ca11951c92f262808789c2ff825681d282759fd7a0ea92ecaf2b1d178799e32a0d9f203e3acb116f390f1f017b44ecd6a7ed113dce0aa3f7b5831bba598109510738f9d248ec3c76ad3fff4f5014d8c5a331bac6b1f093812cde0a78dc26574f7eb07f4ee6f381ea60e4eccd6bae9d11399f99eeac9450600c1f7ba78f7cf81eb71f5f24b4173f318c3a4b4db8b227307af6c24237ded45f1c1def89a28a5ad2f627733d9683f6db7c2be115aa7de6b6e16a6c4938999e26626248ce092c4c983fbd4e336233aff95660cd30a31ce5e67a565540c62d3398dc95b305c9c06b433c2876147fec5122c2034dafcad4c896dff728a3a8aa6069399ec132b15e0a301b8fd6fed7094e2e83107e281aae25a8db80a731befa49ea31680fa455b93b728347b83e19fdcff42dac2f8af975fd9423d85bc9ae884a7ef87d7d033c2298c6a6f0d49bf9245da97c5920848b92f8722943ef3ee76817b5912d4a76ca237d05a540e3bd0d4c0bc5466c7bb747696109228ffde6906e7d46a0f1515a741fe0f131ac1363ab70b7a98f2a5b7de4bd86be394a1d7db55ee223ccd2e1fea0a8509e2ff17bba8f9ead8ecc2f88eb657a2d6e0aa59db02883be55817c2192e4e7084ad93a9548af2b2abc83f45662e8a5447cd8d3a5cc8c02ac8f31bd8995c87ac91e1b861ebfb069511de1ce661f730252326f03f7137d51d6d314c65cea6d795093f56cb132c0525992691c7b3cfd22d2018668860d105e813e4f7b442700d1594bc62b653bae8c62dca57be5fd126fd85001b1f56e0f63682e84938c397e700c1fee8d5daa1066f7cf99d2db35458bbb60e4e774f6e4fa05419f098a9bf877beff102533834d58790da6a124b5cf48b9c44008ab5c6086ebc04f767d44bf6ab0d4ab9cde0262c284d9c87a8981075233364c0df22e5bffa11c9ed11a4bb020083c8ab3170798acde237b6045d639d41788a970a58a35132d35a34e7c5350366ac3f6fa011bc37eefc33ec598df489a903edcd269827587013be06f0e15c7e21a84c46453cb7854cba3bbc3e931e518d6b80578c413071cee321017e1c952346edaab48bf130b85cb5759406e55866df929b1e6a08d15713c886d0b52ec72eca5ae17790b94ef0c01b016a853a280bb60d36845e693616e16b541bff175e0940284f85289992761c1180e4c85e634340c0a0b9aa1f0518a8a013c347ed6fa11b7bdd3215d90f4653bedcda332cf05bbbbabf0d25c5eab7e8ae3c57ab8eaf111573cd7f3a1ff4592433ff543b86fc7a61d62bcfc5432c1e585f5f00e0367dd995fdbb574a71a94cd21d0ef32a22511fc6a34426831fa2c785a6c50da522092a17aab6cc8a491298f3ac082b006c626b53e52e3688e24eb6888558bcd8e30193e369368e7c580f2f6879b881d83</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Under Construction</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://fl334.github.io">Fl_334</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://fl334.github.io/2023/02/25/linux/">http://fl334.github.io/2023/02/25/linux/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/linux/">linux</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/02/CAGD/"><img class="prev-cover" src="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">CAGD</div></div></a></div><div class="next-post pull-right"><a href="/2023/02/24/linux-command/"><img class="next-cover" src="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">linux_command</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/02/24/linux-command/" title="linux_command"><img class="cover" src="https://s2.loli.net/2022/12/26/eXfFjuNvwy76l53.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-24</div><div class="title">linux_command</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/12/26/Hp4BugrivUDTLb7.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fl_334</div><div class="author-info__description">日々にシフト</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">13</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fl334" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:flames3340912@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">New to Coding~ Yoroshiku~((>﹏<))</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content toc-div-class" style="display:none"></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By Fl_334</div><div class="footer_custom_text">Mi-Pa!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = '/pluginsSrc/mathjax/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="/pluginsSrc/katex/dist/katex.min.css"><script src="/pluginsSrc/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script>(function(d, w, c) {
+    w.ChatraID = 'kdzLnTG5WTwLxSuLA';
+    var s = d.createElement('script');
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+    };
+    s.async = true;
+    s.src = 'https://call.chatra.io/chatra.js';
+    if (d.head) d.head.appendChild(s);
+})(document, window, 'Chatra');
+
+if (true) {
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      Chatra('openChat')
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      Chatra('hide')
+    }
+    function chatBtnShow () {
+      Chatra('show')
+    }
+  }
+}</script></div></body></html>
