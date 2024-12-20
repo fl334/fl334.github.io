@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="en,cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Arch Linux | fl_334's blog</title><meta name="author" content="fl_334"><meta name="copyright" content="fl_334"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="🐧🐧🐧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arch Linux">
+<meta property="og:url" content="https://www.fl334.com/2024/05/12/ArchLinux/index.html">
+<meta property="og:site_name" content="fl_334&#39;s blog">
+<meta property="og:description" content="🐧🐧🐧">
+<meta property="og:locale">
+<meta property="og:image" content="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png">
+<meta property="article:published_time" content="2024-05-12T04:13:00.000Z">
+<meta property="article:modified_time" content="2024-12-20T03:40:52.584Z">
+<meta property="article:author" content="fl_334">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png"><link rel="shortcut icon" href="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101738222.GIF"><link rel="canonical" href="https://www.fl334.com/2024/05/12/ArchLinux/index.html"><link rel="preconnect" href="//cdnjs.cloudflare.com"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":1000,"languages":{"author":"Author: fl_334","link":"Link: ","source":"Source: fl_334's blog","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdnjs.cloudflare.com/ajax/libs/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Arch Linux',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-19 22:40:52'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js"></script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/map/js/china.min.js"></script><link rel="stylesheet" href="/css/transparency.css"><link rel="stylesheet" href="/css/font.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101658804.webp" onerror="onerror=null;src='/img/404.GIF'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-fish"></i><span> Fish</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png')"><nav id="nav"><span id="blog-info"><a href="/" title="fl_334's blog"><span class="site-name">fl_334's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-fish"></i><span> Fish</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Arch Linux</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2024-05-12T04:13:00.000Z" title="Created 2024-05-12 00:13:00">2024-05-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OS/">OS</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">2</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>1mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="01d934b71ef703f2eb7cc9923dea89690735908c4166a391356c6d95285e7234">6c3123a1b42250d902894503e5bdf92d914f1e3ae9c77fb86573700c657da40a126cd10adcc143cf724cdef6e82c81eaa34c581c4bb672da55d58d00bd1fb6f1f20319045b92619e71decc70586ff4aa139b219edadb48027252d9b767abaaa12510d029dba04eaee9a0b8a6f01be040918734228fdf8fc02492309ab07929100c4ce76325f30b298960954238642fd9b27591ed6a356c5afaa00b6e20efeabec4abf4d7ae1cd640df3ce5321c46078cce84c3bf75756574d8dec9cf67fc95620e77bd303e4500e4314c91c94b856d8911f4f31946eb837fa1480b5a0aa9a2796054a47eb346d2f81d825a1efb5ccfeb9ecd8e156a6473cb0bdab5332140facea8a60919617a51fa6af8d84634dc97e5065d5147b72afe9dbd7a92bde47adaf20a5a49ed5b7544ecb55e654b11fb7c22c15486a71bb26d4c046f1329802505c5394b94f5fc4575381970861bcf37043647a9bfd12f5f093aad176e052538013877cd71cf68c30ff0d83261284db215492496217d6bf2d17e94602a3683056fff659d43a878226c79cb8adee2cfa4d6620c88accb1c36f8e199f1586997cb73472b6dd2e2877c67c5f645df63d11938236d3861f3936a6f3b71f4861da2d4b99212785cdd7eb09793d63f7379965f7fdfb8d9ef55d8d98dc157f7daaf160d4a7f7f92969d534464b367bb5e88942adc71844ad3630c520fb5be2cda2fbca36fb8086de3af2d40e1fa9c6c60989755479950b80deb9d6176e2df59d9e7390952d27ca0e63d6bc32de51272714283281b13097df54b08810654387f57e1e722732e269429e502662c7fefdf600686b33ae971e71e383228e8e6573842bf434f07e78d432ff8ba78397f529f96f282247b0508b11b73ce8d1ea5bdb39d2c2ee9b04e56228bd29797b85b14c10b63492052a906b1d2e659036f96734bed3efd05b6fc80b0e6f717e91547d60d3ad6bd982251856cb486fda341215013aeb27b6ccf97878a181256881a8d56a41c7afb294db6922937ed038c12817d775d234fdda20619df782314fd2c00eb6f81fbe718aa32a4afa7d6ebaf93a49520d599e3da8660625a2d708abaee7bf7ad2f3c4508a0b42183e588136df2698709d628efc085f50d393e83c89d14d132d2003ad2e88d4e61cda085672a28cf16ca3c94ab00ac14ec1ee9307512a3fceeca6b88479fbf3d9b0e6ec596f8fe2d64b80511563e99ffaf842eee317d96fd043badebc45faaf6520ae7ef455f81f516c20eb77366fded74d663dec11b6530e4dd9662fd28a07c8326d10092664cec00f2d6303a2f6b8eabb92777cfacb33c809ba5676fce5142d20fbd89e1844f4af8d23719c705b6dd712028b614e6aa6c289f55820c03b519612f8839106b61f6eb8a5619b7b3f4d86223b771e311842a1d368fc4431a4cedcd2649b3d06d7a3d53c6c24e381270770bcaa3e92adada20500781e7e6e2090e54d0e562faf9ddfbbea13fdbe5f187c4fc88d55a48fec0e6a1f82f4d9ffcbc9ecc06cf80f131f657042c9a084eca1b15e244ee7cc300a9838a2b8056f5d16c5313c25a582e87947d745d798c6e29395ecfbb27ed79e0c4f2bd9fee6d3e669a133bc699ab8bca26ccdac3a80b465e1e59e3c431e061567580a164a6b2405412bb3feb2fa0948932e067af37e0b1afba68377577cbddb036b90b9666ac62241bd4e040d2d856c58ad78f9bade6a8eba47bbce2e0fc64b68f27fd05c01893fac3041aaf84fdc2f011a359871bcc4f32fb7e57cb18e26bf4744cedb81c694352cce790ca4d10fdb5d639aa906fedb57ad0b8e82cad14172309bdab2a82e7049a461040a3ba9b157937998242c4cadb12617ba3ecebb6b6c90f362fc310a2837bb75b5f45bf96fbf358c3536aeb940dfe15552a3f7b789b7d9fee9347c824922febbd2b03198566544e1547b38c9c077e9eaad8c09178d4cdbbb5beb21bc761436b639321e29928169b79709b7bfd11ff72b7a7b2a5908142e3064acf3173f01196a8e00216ac098fdc217a78fbd75887a05bc10b9d2fbfcb82b6932a61773311cc45e935d7f47d04ceaa6b7857f1df4fe27167302a2846cc1cefc804459c18529c9930b4d9f0d32855a3943d0d0b282793403fa29275587ce53e7b90b9b14119b666833ef12578c40a2ff4fcd107a2180602510012858cc27e1f054b40e509189dde933a2d6d85a012282c429b1023cd9361874e1a1222e3f0fb2e5ee18e4ad603e334cba7e9e436f4eaab867cee86c8c8e59d111e1c737ed8b2dddfbac5b718163010bb65787007b12b0c8b482e7aec5168a422d1639487592793a3238552e00e726fe3cb217562cefd4a6c89722319a5132477e178cac717d5f63e9149f110cfb44c8a6f1ac0773aa1ef81eab69cbf57f311a878dc8db467fef523b276f8127d18ee34d545f21bb533ad979fc4a6b7a0dc30f962190a3004c3ea3e53b8ed014d669bd380aa896210c37ad5607bc403c4ab85922ee5fb64e6c9ee9a58481bb324f9d04b36b5aa01cb03bb55dc1b479c1944672e9dc689db56ecd8f97df5648e3c4bb4de1dd11ffa38bd872f568799d5fbd1369ebe1a710d2f829e1ac403b6b52ebddfdeddedc454b7db5ed8345372155303036029490aec1773a1a2f091480c6589109c612d2848c0b66fa31048469ab0558920fd2bc56758845652c7aebe1f7f1979b977736d6f8556232ee680ad6f7da56e6c9779990e039eebf38590c56419688a34bc9d62a6dd94d9e5e23f4929de223d8fcac7f1ae842a3733cc1d2b27593ddba2802b2022421faa479ec8eb0e75f6b9c073095d2176d328f0f3db1be56853bc41d4c8038700dc4390dfaa793eaf49fab606b69610bbc75c46782bf4eafa82674d2122fc625f5ed3dca31d6301b6d60a03eab23343eb2be1391933825301c8fc87d22c5ae8707a056cfb1e789a65ee576c0fe78faf8b8923e396d70f13038a4646ed47a0519fea61bba4b30d0767029e01713a860bb8e67688193ce4dbb0e2ac323f4d19421ad4e8a8a8dd5231ec2e7d9cb94f67de24949dec0b546af50e5caa9d2b798e87ea7f83eeac9d92f5a2563dac44fe14d05c75215e5b4bf0fcd82cdb2f1eb9f435647da74390541f6d0f4088f08db2138278a9e99082750cbb05b63169b938376e348455375a212b983b404107fc2823f350faee636f2e4dfafac6410b8748abe9d42b5ce148941903bbc5841edd2463948d11ee866321f5c033b5c1ffba7a8d3cc9392af1e3d7fbaa036558c1a0243d904ead21220ca78664275ba34ff428c760726f47c95a6b8a02b0768b7f7b6bbad6348e93e17d096cfe860752122b5fda234238942b5f45d4a3e4f4fee1889b7aa53b8a7407c3fb1633b3e4cb4f7448490bd2fe7106f885b074944f92b4483e7702a41feb6e1e8a797b76eca7f8f0e2853da18e89a736c60cb1b28d81e4a5f29b6fecf6a52a600da9b2bfe894190b9b286ecef3e5f2a74b9478e9b39bd81a36b927c786cdc025b8c974d12c88e8fc14a1403db82b44cc45b4f5a6eb41d643999a07e13138434069d72e89c102370874c0c823c9095bb7964f46d353319c3335119e84524578e4527452e24a6546f5dca3569a4c8d36435f14cb6e96969fd26267fdd2ca2e35317c2e88be1982fad31b20185923b055083ec64ee8c84e7d3b0ada84f25506be5bea64c07c73b28441ae157b271bb772cc42296e4e6b6644c9490f04dcc2bffdd2e10ed694fc6db239f214c5ef2ef6bf9f4787db3b87db4d527f023fb6080160c88e51c418cadb10b25ca720005f4ce57cf6cf1f3817bde2be52ed8315d974b8fbe3074b6bcf508bce16d172a3d5604489d7803dc0a8139a7761249ef83efeea217658c157ee54322a42aea85526b1cf54901aac98d7859c1abd82fcda4bb081e59e36e76194e919b8ce45c6c225e9ec36cd51ab979d7c9438b6bd72f37338167c97dddf03e75d77c91ebc6fb3f7a95930478a60a37bfa60f23a511348f26f2079ff44204f3b8774f6ecc1a61f9532592ad0b7fea5b349ec657c69d04ffa68abe09e3f2f42d5988933b3bf00818e60840f93c73070f8d2fbc25c3468ff3d1f7aefcbc9bc0510b367d7441b2d306750874d22323f6f006f91cf32936378570ce00c76b1ae36e0f502a6e4d00083c7c2e51bcf43873932096150b43614fd1f3b3eff109f722954d19364bb6902e7a04870d56d0e8b6f8f324e593786b4e196320d0be026275f898afbb69f2c95f0fbb953e7b60f0ba823e39d565922f5b4aa3acb85856fe63ea0de983ef0f170f47f75aa3249a82a0b18f50cfcc31fa361243cb943b5518e9775b8051caaf929043072d864660f315977b6418f0e4f3211a1795a7e238421d7943a4347cc17aacc5f4e70ca74866c662076fd958b755ba43db2df1e89b1f1e3acf226f49bd946c51b6af59abdf22b881ed897191d9da89d841a6a84150aff86f1662bf4c072ab0e90f093b14b3a78457546ec47d72d9af880083174358d33187aa75d45eca99971289366875369f95927a43b906d5c2640e644cd584e143a66e25bc10639b73bf69f00375a3f39cb441d21b3da5e1306dfb4dfb20b9e3b2f903d44614785247a8cb43d3bc218dbd620cb86e5e61afe562af30f03974a747fd00f5d4293675962174e53920ddb80d8940eef77dcfada036341fbc22f885d0791aefc6a27f98bff4a869bfa5317500f23c401ca0a2eac4231fe3ce30c8cb298950f74d7b325e37ee892a4a4401315555bbd88e98a45caae87a3d184b884ed99be1391515a64d2f6472efd1da8ea2dd730a2282aa6a7ff1f8a04aa31d11221f778cd7c7f4cea238964629d2ccf4170d84cab3452a49e7616f9788b6a2a3f91c80bf3b8341d00347a85f2e09a923448d1131d0750ecc7f4cf5d0bb5507e923263bb5e7a70022562998432af96a6394131a9c1418afc6a07476c0c68360df2d2ea1fea2f426a5baebb97b55e99723a96897917d57a5f723a0d8c4e2fb02a0cb97f58a726458b073dfa72e392a321f7537d660b413ed58e753d9d737ea85412a624b787c5cdc2f3ec3d54f1d0b420318d70ce705cbf90c497011d9f97628b954fe7dd4df63ab5ba4f85d453f767b7208ab076ad11a11ff399750565442c54cd030e0af573731e61d4845a52fe25467756eef2e0d2ce6c6978641eda045a6f566013a09931b04f254e0e14c0ce4046d50736d9ca95739458e7dfd6a401410177ef28da1d87e83adf5cab95c6b85a0fc0eb91341c1d6adc22e152c313ee13deeac9c03f30c7b1ef86efccc396224bbbf9ab3cd782e32fdf1069b141d33dcfc73cab3d340a677253175079504f7882b7eb8f9f888a8d362ea2266a0fc5293966a12df56b0461c6eeb42ae7341278ed062ed1bfc63d2d58b410b9f8feee7f35147ae91840c381ba58323d1b2c7d289b037e0b89d82c4091eb05b23007d4785676dd5a75c9ed29655e6d4175765750868601eb7b58a39462a2c4a7212a1d78fd762b7c2f360389e7ad09362ab753526159d3e9c9e677e04afe8ff78cc011410d477207f9b56dbe29a02d52503a8eb334e44a4b6f39b19a945a355329a8a2f4e1b938c3c2273b8de5d443db7257839324ac379a265ce78c68d7583fd0bb86c85b3693dc373d33dc0891cfeaf8dfbe2f32a14aeeef0389824308b2050ef5a8a721c89307eb410cafeb7f96ee1cee88983f4de63a30f3cfe82d2f36433c40e37cc1d093ed19e2ad19911db9a9184cc609c2de06641729486fbb0f09ffaaae65d26ec3d54436490380f8827f127fd9e040f0553abadaaebb96b3c4ca1aa06dcc5d9f3ed714d85bc4080903c81bd7b653974691bd87e43b2dc1684c7073d566122fe3f63ee022dc402978d904dc40bb4ac9cc2306f61042ea52761b19cb20276781daf0890484bcce0679965342d75fffdb44477176e9f313ba0353d9975a3faf9f6a73e5cd7583af9e301844102d09411ce6b1d02a0ed0e992b13e4b30cc17e6a57751ed9625564ad4930a973e4fce4606cdc0f6417c15bb58f3d9301e7825114bacc279779042ea98ba8917e40de7253eec204f9ff0e59b7fb0eaf59fb9ae8c9d16909ed9cb19b1da4f656c029ca0f7610e66176670a3ee0fca2f0c82d9c61a064bfe9f0502d7e1d458f39f244fc7de984d775e36e274b2050afbe1abb7944d8c24e0b420ac503312a4f6bc267f86662bd3de5ca2b21ead79abd9d98660de9c3866d5b0df75b1a6a39f0771c4b9ae624d9c5d0ea550ddc2adb3b4baca00596842948c14039ad583eeff8080e3213aadd7f177ab5a788112f93c6f0b3beaba26cf83d4b0fb29ec0e4f51d8e94a2ebc088efe2d3f5f0194139e7f6d739bf558a457018a8a279f233013c531aa1484f76df3e157ce541fc8b8017535f1bf2048b2f6d6d4f26c76245b8915e3ca482cd20accd64b420e2b53d375459eca32f27e8bb41a727446a0807da5e51a07b0d5f40a4d884bf1c2f50e356b37765c7cc5a52417448da5c5f773b9ec5c453651847840eb007a6a19a7f498b670766e43587c26994d3d54a5763dfe6044017e0c1c5c40bc8f1692c2288e9e90ead01bab5ad5fe62be98622928f9ea09ba3afe3bc027ddfc12ef2c52e722385ccbc19eebaea809e423884de21e2c9bf165cefcb9e77842dd352db219debd79017b44a5d6061c70e8705c02e3616fa142a061a64023295f166bdce0a0980e8ff996c850222e466d324208d94ae82cc3363f11d0943513bc2a7e649c4923f6ce0f082162f49500ea37a3e66b42cb2553e0a6e12c4835c4e17dab84b80048bb5aba22b63d881f00a637893fc98271e54e2e095d4eb0d0d5fbf250ef3cefee5fb9978042e6a67f6c023c52bc3809f8f3db29fecf9f856f3f2ec3486f0005473de2f120e80711a8880bdb28b0ad169c0796ac14d197b0c0a935044db1886b16bd18db8a0a53c42d515e11df1daf18d69bad70194ecd56097df0d017ef26cead19ab0a542a00ea407be7a7c4b5312b53bb4ee1e444d5ec3b50b3e6853ad938b0a38768293eaf53e303652c161a79fd89012d606cc1e622095be3932979f024832bc3959a80455d147ab1b515c1427a00e66551b83b4e99d0305c68237a8750be800383b356f3cc54f7651ccacdfe6904a7be6b6c414cbe9dd338579030c370b9aa95cc62ca62a81698546b04ccfc06c40f9dab13ae209fe34b31b21e2010c7c4946bbe68b70d08883a49ace73a46ca44b745ddfe04f0d1b11e4ad0316b97c663b38cd5b82d49800f96238a923ebbaa2d08330e7bccc1780ba919dc74665360e85cab06c724707bde6d78523ff81788d0ccc7</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Archived</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.fl334.com">fl_334</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.fl334.com/2024/05/12/ArchLinux/">https://www.fl334.com/2024/05/12/ArchLinux/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/04/24/Formal/" title="Formal Languages &amp; Automata 1"><img class="cover" src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png" onerror="onerror=null;src='/img/404.GIF'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">Formal Languages &amp; Automata 1</div></div></a></div><div class="next-post pull-right"><a href="/2024/05/15/SQL/" title="Structured Query Language 1"><img class="cover" src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png" onerror="onerror=null;src='/img/404.GIF'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">Structured Query Language 1</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/02/25/linux/" title="Linux"><img class="cover" src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-25</div><div class="title">Linux</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101658804.webp" onerror="this.onerror=null;this.src='/img/404.GIF'" alt="avatar"/></div><div class="author-info__name">fl_334</div><div class="author-info__description">日々にシフト</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fl334" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:flames3340912@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://t.me/fl_334" target="_blank" title="telegram"><i class="fas fa-brands fa-telegram"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">New to Coding~ Yoroshiku~((>﹏<))</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content toc-div-class" style="display:none"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Preparation"><span class="toc-number">1.</span> <span class="toc-text">Preparation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Archlinux-live-env"><span class="toc-number">2.</span> <span class="toc-text">Archlinux live env</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Connect-to-the-internet"><span class="toc-number">2.1.</span> <span class="toc-text">Connect to the internet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Free-space-new-partition"><span class="toc-number">2.2.</span> <span class="toc-text">Free space new partition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mounting-partitions"><span class="toc-number">2.3.</span> <span class="toc-text">Mounting partitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install"><span class="toc-number">2.4.</span> <span class="toc-text">Install</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#live-env-to-hard-disk"><span class="toc-number">2.4.1.</span> <span class="toc-text">live env to hard disk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Change-root-into-the-new-system"><span class="toc-number">2.4.2.</span> <span class="toc-text">Change root into the new system</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Time"><span class="toc-number">2.4.3.</span> <span class="toc-text">Time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Language"><span class="toc-number">2.4.4.</span> <span class="toc-text">Language</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-password"><span class="toc-number">2.4.5.</span> <span class="toc-text">Set password</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set-device-name"><span class="toc-number">2.4.6.</span> <span class="toc-text">set device name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install-efibootmgr"><span class="toc-number">2.4.7.</span> <span class="toc-text">install efibootmgr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install-GRUB"><span class="toc-number">2.4.8.</span> <span class="toc-text">install GRUB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Internet"><span class="toc-number">2.4.9.</span> <span class="toc-text">Internet</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/18/MMDS3/" title="MMDS 3">MMDS 3</a><time datetime="2024-12-18T11:04:30.000Z" title="Created 2024-12-18 06:04:30">2024-12-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/15/MMDS2/" title="MMDS 2">MMDS 2</a><time datetime="2024-12-15T09:01:43.000Z" title="Created 2024-12-15 04:01:43">2024-12-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/12/MMDS1/" title="MMDS 1">MMDS 1</a><time datetime="2024-12-12T19:32:17.000Z" title="Created 2024-12-12 14:32:17">2024-12-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By fl_334</div><div class="footer_custom_text">Ni-pah~</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/search/local-search.min.js"></script></div></div></body></html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="en,cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Py libraries | fl_334's blog</title><meta name="author" content="fl_334"><meta name="copyright" content="fl_334"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Guides for greener">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Py libraries">
+<meta property="og:url" content="https://www.fl334.com/2023/01/28/Py_libraries/index.html">
+<meta property="og:site_name" content="fl_334&#39;s blog">
+<meta property="og:description" content="Guides for greener">
+<meta property="og:locale">
+<meta property="og:image" content="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png">
+<meta property="article:published_time" content="2023-01-28T05:14:44.000Z">
+<meta property="article:modified_time" content="2024-12-20T03:40:52.588Z">
+<meta property="article:author" content="fl_334">
+<meta property="article:tag" content="Library">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png"><link rel="shortcut icon" href="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101738222.GIF"><link rel="canonical" href="https://www.fl334.com/2023/01/28/Py_libraries/index.html"><link rel="preconnect" href="//cdnjs.cloudflare.com"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":1000,"languages":{"author":"Author: fl_334","link":"Link: ","source":"Source: fl_334's blog","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdnjs.cloudflare.com/ajax/libs/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Py libraries',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-19 22:40:52'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js"></script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/map/js/china.min.js"></script><link rel="stylesheet" href="/css/transparency.css"><link rel="stylesheet" href="/css/font.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101658804.webp" onerror="onerror=null;src='/img/404.GIF'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-fish"></i><span> Fish</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png')"><nav id="nav"><span id="blog-info"><a href="/" title="fl_334's blog"><span class="site-name">fl_334's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-fish"></i><span> Fish</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Py libraries</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2023-01-28T05:14:44.000Z" title="Created 2023-01-28 00:14:44">2023-01-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python/">Python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>6mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Python-For-Data-Science-Cheat-Sheet"><a href="#Python-For-Data-Science-Cheat-Sheet" class="headerlink" title="Python For Data Science Cheat Sheet"></a><font size=6><a target="_blank" rel="noopener" href="http://www.utc.fr/~jlaforet/Suppl/python-cheatsheets.pdf">Python For Data Science Cheat Sheet</a></font></h1><h1 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a><a href="numpy.org">Numpy</a></h1><h2 id="linalg"><a href="#linalg" class="headerlink" title="linalg"></a>linalg</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]]</span><br><span class="line">np.diag(a) || np.diag(b)</span><br><span class="line">np.trace(b)</span><br><span class="line">np.dot(b, a)</span><br><span class="line">np.linalg.det(b)</span><br><span class="line">np.linalg.eig(b) <span class="comment"># first variable:eigenvalue second and third: eigenvector</span></span><br><span class="line">np.linalg.inv(b)</span><br><span class="line">np.linalg.solve(A, b) <span class="comment"># solve Ax = b</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="statistics"><a href="#statistics" class="headerlink" title="statistics"></a>statistics</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">np.<span class="built_in">sum</span>(a,axis)</span><br><span class="line">np.mean(a,axis</span><br><span class="line">a.<span class="built_in">min</span>(axis) || a.<span class="built_in">max</span>(axis)</span><br><span class="line">np.std(a,axis) <span class="comment"># Standard Deviation</span></span><br><span class="line">np.var(a,axis) <span class="comment"># variance</span></span><br><span class="line">np.argmin(a,axis) || np.argmax(a,axis) <span class="comment"># get index of max/min value</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a><a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/user_guide/index.html#user-guide">Pandas</a></h1><p>panel data &amp;&amp; data analysis</p>
+<h1 id="Scipy"><a href="#Scipy" class="headerlink" title="Scipy"></a><a target="_blank" rel="noopener" href="https://scipy-lectures.org/">Scipy</a></h1><h2 id="scipy-optimize"><a href="#scipy-optimize" class="headerlink" title="scipy.optimize"></a>scipy.optimize</h2><h2 id="scipy-linalg"><a href="#scipy-linalg" class="headerlink" title="scipy.linalg"></a>scipy.linalg</h2><h2 id="scipy-stats"><a href="#scipy-stats" class="headerlink" title="scipy.stats"></a>scipy.stats</h2><h1 id="Scikit-Learn"><a href="#Scikit-Learn" class="headerlink" title="Scikit-Learn"></a><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/user_guide.html">Scikit-Learn</a></h1><ol>
+<li>Classification:<ul>
+<li><strong>Supervised Learning</strong></li>
+<li>Identify the category of a given object. . </li>
+<li>Implemented Algs: SVM, nearest neighbors, logical regression, random forests, decision trees, and multi-level perceptron (MLP) neural networks.</li>
+</ul>
+</li>
+<li>Regression<ul>
+<li>Predict continuous value attributes associated with a given object.</li>
+<li><strong>Implemented Algs</strong>: Support Vector Regression (SVR), Lasso Regression, Bayesian Regression, Stochastic Forest Regression, etc.</li>
+</ul>
+</li>
+<li>Clustering:<ul>
+<li><strong>Unsupervised Learning</strong></li>
+<li>Group a given object based on similar characteristics</li>
+<li><strong>Implemented Algs</strong>: K-means clustering, spectral clustering, hierarchical clustering, and DBSCAN clustering.</li>
+</ul>
+</li>
+<li>Data dimensionality reduction <ul>
+<li>Excessive computational complexity, and feature sparsity is too severe</li>
+<li>Such as principal component analysis (PCA), non negative matrix decomposition (NMF), or feature selection to reduce the number of random variables.</li>
+</ul>
+</li>
+<li>Model selection <ul>
+<li>Select which model works best for a given parameter and model. </li>
+<li>The main purpose is to run the model by setting different parameters, and then select the optimal parameters through the results to improve the final model accuracy.</li>
+<li>Implemented Modules: Lattice search, cross validation, and various measurement functions for prediction error evaluation.</li>
+</ul>
+</li>
+<li>Data Processing<ul>
+<li>The feature extraction and normalized feature extraction of data preprocessing data refers to converting text or image data into digital variables. </li>
+<li>Learn by removing invariant, covariant, or other statistically insignificant feature quantities. </li>
+<li>Normalization refers to converting input data into new variables with a zero mean and unit weight variance.</li>
+</ul>
+</li>
+</ol>
+<h1 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a><a target="_blank" rel="noopener" href="https://matplotlib.org/3.2.2/tutorials/index.html">matplotlib</a></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">limit</span>(<span class="params">c, n=<span class="number">25</span>, p=<span class="number">2</span></span>):</span><br><span class="line">    z = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">        z = z ** p + c</span><br><span class="line">        <span class="keyword">if</span> np.<span class="built_in">abs</span>(z) &gt; <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> np.inf</span><br><span class="line">    <span class="keyword">return</span> np.<span class="built_in">abs</span>(z)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mandelbrot</span>(<span class="params">n=<span class="number">25</span>, size=<span class="number">250</span>, xlim=(<span class="params">-<span class="number">2</span>, <span class="number">2</span></span>), ylim=(<span class="params">-<span class="number">2</span>, <span class="number">2</span></span>), p=<span class="number">2</span></span>):</span><br><span class="line">    x = np.linspace(xlim[<span class="number">0</span>], xlim[<span class="number">1</span>], size)</span><br><span class="line">    y = np.linspace(ylim[<span class="number">0</span>], ylim[<span class="number">1</span>], size)</span><br><span class="line">    m = np.zeros((size, size))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(size):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(size):</span><br><span class="line">            z = limit(x[i] + y[j] * <span class="number">1j</span>, n, p)</span><br><span class="line">            <span class="keyword">if</span> z &lt; <span class="number">2</span>:</span><br><span class="line">                m[j, i] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> m</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mandelbrot_color</span>(<span class="params">n=<span class="number">25</span>, size=<span class="number">250</span>, xlim=(<span class="params">-<span class="number">2</span>, <span class="number">2</span></span>), ylim=(<span class="params">-<span class="number">2</span>, <span class="number">2</span></span>), p=<span class="number">2</span></span>):</span><br><span class="line">    x = np.linspace(xlim[<span class="number">0</span>], xlim[<span class="number">1</span>], size)</span><br><span class="line">    y = np.linspace(ylim[<span class="number">0</span>], ylim[<span class="number">1</span>], size)</span><br><span class="line">    m = np.zeros((size, size))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(size):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(size):</span><br><span class="line">            c = x[i] + y[j] * <span class="number">1j</span></span><br><span class="line">            z = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                z = z ** p + c</span><br><span class="line">                <span class="keyword">if</span> np.<span class="built_in">abs</span>(z) &lt; <span class="number">2</span>:</span><br><span class="line">                    m[j, i] += <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> m</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.imshow(mandelbrot(), cmap=<span class="string">&#x27;plasma&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="uuid"><a href="#uuid" class="headerlink" title="uuid"></a>uuid</h1><h2 id="uuid1"><a href="#uuid1" class="headerlink" title="uuid1()"></a>uuid1()</h2><p><strong>基于时间戳</strong><br>使用主机ID, 序列号, 和当前时间来生成UUID, 可保证全球范围的唯一性。<br>但由于使用该方法生成的UUID中包含有主机的网络地址, 因此可能危及隐私.<br>该函数有两个参数, 如果 node 参数未指定, 系统将会自动调用 getnode() 函数来获取主机的硬件地址。<br>如果 clock_seq 参数未指定系统会使用一个随机产生的14位序列号来代替.</p>
+<h2 id="uuid2"><a href="#uuid2" class="headerlink" title="uuid2()"></a>uuid2()</h2><p>算法和uuid1()相同，不同的是把时间戳的前4位换成POSI的UID，实际当中<strong>很少使用</strong></p>
+<h2 id="uuid3"><a href="#uuid3" class="headerlink" title="uuid3()"></a>uuid3()</h2><p><strong>基于名字的MD5散列值</strong><br>通过计算命名空间和名字的MD5散列值来生成UUID,<br>可以保证同一命名空间中不同名字的唯一性和不同命名空间中同一名称的唯一性,<br>但同一命名空间的同一名字生成的UUID相同。</p>
+<h2 id="uuid4"><a href="#uuid4" class="headerlink" title="uuid4()"></a>uuid4()</h2><p>基于随机数<br>通过伪随机数来生成UUID。<strong>有一定的重复概率.</strong></p>
+<h2 id="uuid5"><a href="#uuid5" class="headerlink" title="uuid5()"></a>uuid5()</h2><p><strong>基于名字的SHA-1散列值</strong><br>通过计算命名空间和名字的SHA-1散列值来生成UUID, 算法与 uuid.uuid3() 相同.</p>
+<p><strong>唯一性要求，最好使用uuid3()或uuid5()</strong><br><strong>全局分布式环境下，最好用uuid1()</strong></p>
+<h1 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="string">b&quot;hehehe&quot;</span></span><br><span class="line"><span class="built_in">print</span>(base64.b64encode(s1))</span><br><span class="line">s2 = <span class="string">b&#x27;aGVoZWhl&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(base64.b64decode(s2))</span><br></pre></td></tr></table></figure>
+<pre><code>Use urlsafe_b64encode() and urlsafe_b64decode() for safety when using url
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"># hashlib</span><br><span class="line">```Python</span><br><span class="line">    s1 = b&quot;hehehe&quot;</span><br><span class="line">    m = hashlib.md5() //Or m1 = hashlib.sha1()</span><br><span class="line">    m.update(s1)</span><br><span class="line">    res = m.hexdigest()</span><br><span class="line">    print(res)</span><br><span class="line">    //Update() can be used many times when data is big.</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h1 id="hmac"><a href="#hmac" class="headerlink" title="hmac"></a>hmac</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hmac</span><br><span class="line">s1 = <span class="string">b&quot;hehehe&quot;</span></span><br><span class="line">key = <span class="string">b&quot;he&quot;</span></span><br><span class="line">h = hmac.new(key, s1, digestmod = <span class="string">&quot;MD5&quot;</span>)</span><br><span class="line">res = h.hexdigest()</span><br><span class="line"><span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+<h1 id="time"><a href="#time" class="headerlink" title="time"></a>time</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">time.time() //timetag of current time</span><br><span class="line">gmtime([t]) //timetag to UTC</span><br><span class="line">localtime([t]) //timetag to local timetag</span><br><span class="line">mktime([tt])  //local time tuple to timetag</span><br><span class="line">asctime([tt]) //time tuple to string</span><br><span class="line">ctime([tt]) //timetag to string</span><br><span class="line">strftime(format,[tt]) //time tuple to formatted string</span><br><span class="line">strptime(str,format) //formatted string to time tuple</span><br><span class="line">sleep() //sleep......</span><br><span class="line">clock() //return the executing time of the programme</span><br></pre></td></tr></table></figure>
+
+<p><strong>Format</strong></p>
+<table>
+<thead>
+<tr>
+<th>%a</th>
+<th align="left">locally simplify week name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%A</td>
+<td align="left">locally complete week name</td>
+</tr>
+<tr>
+<td>%b</td>
+<td align="left">locally simplify month name</td>
+</tr>
+<tr>
+<td>%B</td>
+<td align="left">locally complete month  name</td>
+</tr>
+<tr>
+<td>%c</td>
+<td align="left">local corresponding date and time expression</td>
+</tr>
+<tr>
+<td>%d</td>
+<td align="left">the day in a month</td>
+</tr>
+<tr>
+<td>%H</td>
+<td align="left">the hour in a day(00-23)</td>
+</tr>
+<tr>
+<td>%I</td>
+<td align="left">the hour in a day(01-12)</td>
+</tr>
+<tr>
+<td>%j</td>
+<td align="left">the day in a year(001-366)</td>
+</tr>
+<tr>
+<td>%m</td>
+<td align="left">month(01-12)</td>
+</tr>
+<tr>
+<td>%M</td>
+<td align="left">minute(00-59)</td>
+</tr>
+<tr>
+<td>%p</td>
+<td align="left">am&#x2F;pm</td>
+</tr>
+<tr>
+<td>%S</td>
+<td align="left">second(00-59)</td>
+</tr>
+<tr>
+<td>%U</td>
+<td align="left">the number of weeks in a year(Start with Sunday)</td>
+</tr>
+<tr>
+<td>%w</td>
+<td align="left">the day in a week(0-6)</td>
+</tr>
+<tr>
+<td>%W</td>
+<td align="left">the number of weeks in a year(Start with Monday)</td>
+</tr>
+<tr>
+<td>%x</td>
+<td align="left">the corresponding local date</td>
+</tr>
+<tr>
+<td>%X</td>
+<td align="left">the corresponding local time</td>
+</tr>
+<tr>
+<td>%y</td>
+<td align="left">year without cenetury(00-99)</td>
+</tr>
+<tr>
+<td>%Y</td>
+<td align="left">whole year</td>
+</tr>
+<tr>
+<td>%Z</td>
+<td align="left">the name of time zone, “”for nonexistence</td>
+</tr>
+</tbody></table>
+<h1 id="datetime"><a href="#datetime" class="headerlink" title="datetime"></a>datetime</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">t1 = datetime.datetime.now() //get current time</span><br><span class="line">t2 = datetime.datetime(<span class="number">2023</span>,<span class="number">1</span>,<span class="number">27</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>) //get datetime</span><br><span class="line">t3 = t2.strftime(<span class="built_in">format</span>) //datetime to string</span><br><span class="line">t4 = datetime.datetime.strptime(t3,<span class="built_in">format</span>) //string to datetime</span><br><span class="line"><span class="comment"># get time interval by &quot;time subtraction&quot;</span></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.fl334.com">fl_334</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.fl334.com/2023/01/28/Py_libraries/">https://www.fl334.com/2023/01/28/Py_libraries/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Library/">Library</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/27/Computer%20Networks/" title="Computer Networks Overview"><img class="cover" src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png" onerror="onerror=null;src='/img/404.GIF'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">Computer Networks Overview</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/28/Vim/" title="Vim"><img class="cover" src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png" onerror="onerror=null;src='/img/404.GIF'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">Vim</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101658804.webp" onerror="this.onerror=null;this.src='/img/404.GIF'" alt="avatar"/></div><div class="author-info__name">fl_334</div><div class="author-info__description">日々にシフト</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fl334" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:flames3340912@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://t.me/fl_334" target="_blank" title="telegram"><i class="fas fa-brands fa-telegram"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">New to Coding~ Yoroshiku~((>﹏<))</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python-For-Data-Science-Cheat-Sheet"><span class="toc-number">1.</span> <span class="toc-text">Python For Data Science Cheat Sheet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Numpy"><span class="toc-number">2.</span> <span class="toc-text">Numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linalg"><span class="toc-number">2.1.</span> <span class="toc-text">linalg</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#statistics"><span class="toc-number">2.2.</span> <span class="toc-text">statistics</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pandas"><span class="toc-number">3.</span> <span class="toc-text">Pandas</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Scipy"><span class="toc-number">4.</span> <span class="toc-text">Scipy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#scipy-optimize"><span class="toc-number">4.1.</span> <span class="toc-text">scipy.optimize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scipy-linalg"><span class="toc-number">4.2.</span> <span class="toc-text">scipy.linalg</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scipy-stats"><span class="toc-number">4.3.</span> <span class="toc-text">scipy.stats</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Scikit-Learn"><span class="toc-number">5.</span> <span class="toc-text">Scikit-Learn</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#matplotlib"><span class="toc-number">6.</span> <span class="toc-text">matplotlib</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uuid"><span class="toc-number">7.</span> <span class="toc-text">uuid</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#uuid1"><span class="toc-number">7.1.</span> <span class="toc-text">uuid1()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uuid2"><span class="toc-number">7.2.</span> <span class="toc-text">uuid2()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uuid3"><span class="toc-number">7.3.</span> <span class="toc-text">uuid3()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uuid4"><span class="toc-number">7.4.</span> <span class="toc-text">uuid4()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uuid5"><span class="toc-number">7.5.</span> <span class="toc-text">uuid5()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#base64"><span class="toc-number">8.</span> <span class="toc-text">base64</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hmac"><span class="toc-number">9.</span> <span class="toc-text">hmac</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#time"><span class="toc-number">10.</span> <span class="toc-text">time</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#datetime"><span class="toc-number">11.</span> <span class="toc-text">datetime</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/18/MMDS3/" title="MMDS 3">MMDS 3</a><time datetime="2024-12-18T11:04:30.000Z" title="Created 2024-12-18 06:04:30">2024-12-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/15/MMDS2/" title="MMDS 2">MMDS 2</a><time datetime="2024-12-15T09:01:43.000Z" title="Created 2024-12-15 04:01:43">2024-12-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/12/MMDS1/" title="MMDS 1">MMDS 1</a><time datetime="2024-12-12T19:32:17.000Z" title="Created 2024-12-12 14:32:17">2024-12-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By fl_334</div><div class="footer_custom_text">Ni-pah~</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/search/local-search.min.js"></script></div></div></body></html>

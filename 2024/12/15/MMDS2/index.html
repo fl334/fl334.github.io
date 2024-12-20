@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="en,cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MMDS 2 | fl_334's blog</title><meta name="author" content="fl_334"><meta name="copyright" content="fl_334"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Clustering, DimRed, Recsys">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MMDS 2">
+<meta property="og:url" content="https://www.fl334.com/2024/12/15/MMDS2/index.html">
+<meta property="og:site_name" content="fl_334&#39;s blog">
+<meta property="og:description" content="Clustering, DimRed, Recsys">
+<meta property="og:locale">
+<meta property="og:image" content="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png">
+<meta property="article:published_time" content="2024-12-15T09:01:43.000Z">
+<meta property="article:modified_time" content="2024-12-20T03:40:52.584Z">
+<meta property="article:author" content="fl_334">
+<meta property="article:tag" content="Blog,Fl_334,fl334,fl_334,blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png"><link rel="shortcut icon" href="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101738222.GIF"><link rel="canonical" href="https://www.fl334.com/2024/12/15/MMDS2/index.html"><link rel="preconnect" href="//cdnjs.cloudflare.com"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":1000,"languages":{"author":"Author: fl_334","link":"Link: ","source":"Source: fl_334's blog","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdnjs.cloudflare.com/ajax/libs/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MMDS 2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-19 22:40:52'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js"></script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/map/js/china.min.js"></script><link rel="stylesheet" href="/css/transparency.css"><link rel="stylesheet" href="/css/font.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101658804.webp" onerror="onerror=null;src='/img/404.GIF'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-fish"></i><span> Fish</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png')"><nav id="nav"><span id="blog-info"><a href="/" title="fl_334's blog"><span class="site-name">fl_334's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-fish"></i><span> Fish</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MMDS 2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2024-12-15T09:01:43.000Z" title="Created 2024-12-15 04:01:43">2024-12-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Data-Science/">Data Science</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>8mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Mining-of-Massive-Datasets"><a href="#Mining-of-Massive-Datasets" class="headerlink" title="Mining of Massive Datasets"></a><a target="_blank" rel="noopener" href="http://infolab.stanford.edu/~ullman/mmds/book0n.pdf">Mining of Massive Datasets</a></h1><h1 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h1><h2 id="Similarity-Measuring"><a href="#Similarity-Measuring" class="headerlink" title="Similarity Measuring"></a>Similarity Measuring</h2><ul>
+<li>Sets as vectors: cosine distance &#x3D; $\frac{\overrightarrow{x_1}\cdot\overrightarrow{x_2}}{||x_1||||x_2||}\in[-1,1]$</li>
+<li>Sets as sets: Jaccard distance</li>
+<li>Sets as points: Euclidean distance &#x3D; $\frac{1}{\sqrt{||\overrightarrow{x_1}-\overrightarrow{x_2}||^2}}$</li>
+</ul>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="Hierarchical"><a href="#Hierarchical" class="headerlink" title="Hierarchical"></a>Hierarchical</h3><ul>
+<li>Agglomerative(bottom up)<ul>
+<li>Combine the two nearest clusters into one</li>
+</ul>
+</li>
+<li>Divisive(top down)<ul>
+<li>Start with one and recursively split</li>
+</ul>
+</li>
+</ul>
+<h3 id="Point-assignment"><a href="#Point-assignment" class="headerlink" title="Point assignment"></a>Point assignment</h3><ul>
+<li>Maintain a set of Clusters then assign points to nearest cluster repeatedly eg:k-means</li>
+</ul>
+<p><strong>Clustroid</strong></p>
+<p>$\min\limits_c \sum\limits_{x\in C}d(x,c)^2$</p>
+<h2 id="K-means"><a href="#K-means" class="headerlink" title="K-means"></a>K-means</h2><ol>
+<li>Pick k clusters, Initialise by picking one point per cluster</li>
+<li>Place each point in the cluster with nearest current centroid</li>
+<li>Update centroid locations</li>
+<li>Reassign all points to their closest centroid</li>
+<li>Repeat 34 until convergence(points dont move + centroids stabilise)</li>
+</ol>
+<h2 id="BFR-Bradley-Fayyad-Reina"><a href="#BFR-Bradley-Fayyad-Reina" class="headerlink" title="BFR(Bradley-Fayyad-Reina)"></a>BFR(Bradley-Fayyad-Reina)</h2><p><strong>Assumes clusters are normally distributed around a centroid in a Euclidean space</strong></p>
+<ul>
+<li>Take k random points: pick a random one, then k-1, as dispersed ap</li>
+<li>Take a small random sample and cluster optimally</li>
+</ul>
+<h3 id="Three-Classes"><a href="#Three-Classes" class="headerlink" title="Three Classes"></a>Three Classes</h3><ul>
+<li>Discard Set(DS)<ul>
+<li>Points close enough to a centroid to be summarised</li>
+</ul>
+</li>
+<li>Compression Set(CS)<ul>
+<li>Points close together but not close to any existing centroid</li>
+</ul>
+</li>
+<li>Retained Set(RS)<ul>
+<li>Isolated points waiting to be assigned to a compression set</li>
+</ul>
+</li>
+</ul>
+<p>For Each Cluster,</p>
+<p><strong>DS Summary</strong></p>
+<ul>
+<li><strong>N</strong>: number of points</li>
+<li><strong>SUM:</strong> vector, ith &#x3D; sum of the coordinates of the points in the ith dimension</li>
+<li><strong>SUMSQ</strong>: vector, ith &#x3D; sum of squares of coordinates in ith dimension</li>
+</ul>
+<p>d: number of dimensions</p>
+<p>cluster size: $2d+1$</p>
+<p>Average in each dimension(the centroid) :  $\frac{SUM_i}{N}$</p>
+<p>Variance in dimension i: $\frac{SUMSQ_i}{N}-(\frac{SUM_i}{N})^2$</p>
+<p>$$Var(X)&#x3D;EX^2-E(X)^2$$ ⬆️</p>
+<h3 id="Processing"><a href="#Processing" class="headerlink" title="Processing"></a>Processing</h3><ol>
+<li>Add points close enough to a centroid centroid to that cluster and the DS</li>
+<li>Cluster the remaining points and the old RS<ol>
+<li>Clusters→ CS; Outliers → RS</li>
+</ol>
+</li>
+<li>DS: Adjust Stats for new points</li>
+<li>Merge CS</li>
+<li>Merge all CS and all RS points into their nearest cluster</li>
+</ol>
+<p><strong>Close</strong></p>
+<ol>
+<li>Mahalanobis distance less than a threshold</li>
+<li>High probability of the point belonging to currently nearest centroid</li>
+</ol>
+<p><strong>Mahalanobis Distance(M-distance)</strong></p>
+<p><strong>point</strong> $(x_1,\cdots, x_d)$, <strong>centroid</strong> $(c_1, \cdots, c_d)$</p>
+<p>$\sigma_i$: Standard deviation of points in the cluster in ith dimension</p>
+<ul>
+<li>Normalise in each dimension $y_i&#x3D;\frac{x_i-c_i}{\sigma_i}$</li>
+<li>$d(x,c)&#x3D;\sqrt{\sum\limits_{i&#x3D;1}^d(\frac{x_i-c_i}{\sigma_i})^2}$</li>
+</ul>
+<p><strong>Combine 2 CS clusters if the combined variance is below threshold</strong></p>
+<h2 id="CURE-Clustering-Using-REpresentatives"><a href="#CURE-Clustering-Using-REpresentatives" class="headerlink" title="CURE(Clustering Using REpresentatives)"></a>CURE(Clustering Using REpresentatives)</h2><ul>
+<li>Assume a Euclidean distance</li>
+<li>Allows clusters to assume any shape</li>
+<li>Uses a  collection of representative points to represent clusters</li>
+</ul>
+<h3 id="2-Pass"><a href="#2-Pass" class="headerlink" title="2 Pass"></a>2 Pass</h3><p><strong>Pass 1</strong></p>
+<ol>
+<li>Pick a random sample of points that fits in main memory</li>
+<li>Initial clusters: hierachically cluster the points</li>
+<li>Pick representative points</li>
+</ol>
+<p><strong>Pass 2</strong></p>
+<ol>
+<li>Rescan the dataset, visit each point p</li>
+<li>Place it in the closest cluster</li>
+</ol>
+<h1 id="DimRed"><a href="#DimRed" class="headerlink" title="DimRed"></a>DimRed</h1><h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h2><p><strong>Matrix Rank:</strong> Number of linearly independent columns of a matrix</p>
+<h3 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h3><p>$A_{[m \times n] &#x3D;U_{m\times r}\sum_{r \times r}(V_{[n \times r]})^T}$</p>
+<p>A: Input data matrix; U: Left singular vectors; $\sum$: Singular values;</p>
+<p>r: Rank  of the matrix A; V: Right Singular vectors</p>
+<h3 id="Propertities"><a href="#Propertities" class="headerlink" title="Propertities"></a>Propertities</h3><p>$U, \sum, V$: Unique</p>
+<p>$U, V$ column orthonormal</p>
+<p>$\sum$: Diagonal, Singular values are positive and sorted in decreasing order</p>
+<p>$A \approx U \sigma V^T &#x3D; \sum\limits_{i} \sigma_i u_i v_i^T$</p>
+<p><strong>Goal: Minimize sum of reconstruction errors</strong></p>
+<h3 id="Best-Low-Rank-Approx-Theorem"><a href="#Best-Low-Rank-Approx-Theorem" class="headerlink" title="Best Low Rank Approx Theorem"></a>Best Low Rank Approx Theorem</h3><p>$A &#x3D; U \sum V^T(\sigma_1 \geq \sigma_2 \geq \cdots, rank(A)&#x3D;r)$, $B&#x3D;USV^T$</p>
+<p>S &#x3D; diagonal r*r matrix, $s_i &#x3D; \sigma_i(i:1 \rightarrow k)$ else $s_i&#x3D;0$</p>
+<p>S: best rank-k approx to A, B: sol to $\min\limits_{B,rank(B)&#x3D;k} ||A-B||_F$</p>
+<p>Proof:</p>
+<p>$\min\limits_{B,rank(B)&#x3D;k} ||A-B||<em>F &#x3D;min ||\sum - S||*F &#x3D; min \sum (\sigma_i - s_i)^2 &#x3D; min \sum\limits*{i&#x3D;1}^{k}(\sigma_i - s_i)^2 + \sum\limits</em>{i&#x3D;k+1}^r \sigma_i^2 &#x3D; \sum\limits_{i&#x3D;k+1}^r \sigma_i^2$</p>
+<h2 id="CUR"><a href="#CUR" class="headerlink" title="CUR"></a>CUR</h2><ol>
+<li><strong>Input</strong>: Matrix A∈Rm×n, desired rank k.</li>
+<li>Select <em>c</em> columns from <em>A to f</em>orm matrix <em>C</em></li>
+<li>Select <em>r</em> rows from <em>A to f</em>orm matrix <em>R</em></li>
+<li>Compute $U &#x3D; W^{-1}$<ol>
+<li>pseudo-inverse: $W^{-1}$, if W nonsingular pseudoinverse the true inverse.</li>
+</ol>
+</li>
+<li><em>A</em>≈<em>CUR</em></li>
+</ol>
+<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><p>$A &#x3D; U \sum V^T$, $A &#x3D; CUR$</p>
+<p>A: Huge sparse</p>
+<p>U, V: Big dense</p>
+<p>$\sum$: small sparse</p>
+<p>C, R: Big sparse</p>
+<p>U: small dense</p>
+<h1 id="RecSys"><a href="#RecSys" class="headerlink" title="RecSys"></a>RecSys</h1><p>X &#x3D; set of Customers</p>
+<p>S &#x3D; set of Items</p>
+<p>R &#x3D; set of ratings ( a totally ordered set)</p>
+<p>Utility function: u: $X \times S \rightarrow R$</p>
+<p><strong>Approaches</strong></p>
+<ol>
+<li>Content-based</li>
+<li>Collaborative Filtering</li>
+<li>Collaborative Reasoning</li>
+<li>Large Foundation Models</li>
+</ol>
+<h2 id="Content-based"><a href="#Content-based" class="headerlink" title="Content-based"></a>Content-based</h2><p>Recommend items similar to previous items rated highly by the customer</p>
+<p><strong>Item Profiles:</strong> vector of features</p>
+<p><strong>TF-IDF</strong></p>
+<p>$f_{ij} &#x3D; \text{frequency of term(feature) i in doc (item) j}$</p>
+<p>$TF_{ij}&#x3D;\frac{f_{ij}}{max_{kf_{kj}}}$</p>
+<p>$n_i$: number that mention i, N: total</p>
+<p>$IDF_i&#x3D;\log \frac{N}{n_i}$</p>
+<p>$\text{TF-IDF score  } w_{i,j} &#x3D; TF_{ij} \times IDF_i$</p>
+<h3 id="User-Profiles-and-prediction"><a href="#User-Profiles-and-prediction" class="headerlink" title="User Profiles and prediction"></a>User Profiles and prediction</h3><p>User profile: weighted average of all rated item profiles</p>
+<p>Prediction heuristic</p>
+<p>Given user profile x and item profile i, cosine similarity</p>
+<p>$u(x,i) &#x3D; cos(x,i) &#x3D; \frac{x\cdot i}{||x|| \cdot ||i||}$</p>
+<h3 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h3><ol>
+<li>No need on other users data</li>
+<li>Users with unique tastes, new and unpopular items</li>
+<li>Explanation</li>
+</ol>
+<h3 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h3><ol>
+<li>Hard to find proper features</li>
+<li>New users no profile</li>
+<li>Overspecialisation</li>
+</ol>
+<h2 id="Collaborative-Filtering"><a href="#Collaborative-Filtering" class="headerlink" title="Collaborative Filtering"></a>Collaborative Filtering</h2><h3 id="Find-similar-users"><a href="#Find-similar-users" class="headerlink" title="Find similar users"></a>Find similar users</h3><p><strong>Jaccard sim,</strong> Ignore rating value</p>
+<p><strong>Cosine sim,</strong> Treat missing ratings as negative</p>
+<p>$r_x:\text{vector of user x’s ratings}$</p>
+<p><strong>Pearson correlation coefficient</strong></p>
+<p>$S_{xy}&#x3D;\text{items rated by both users x and y}$</p>
+<p>$sim(x,y)&#x3D;\frac{\sum_{S \in S_{xy}}(r_{xs}-\overline{r_x})(r_{ys}-\overline{r_y})}{\sqrt{\sum_{S \in S_{xy}}(r_{xs}-\overline{r_x})^2}\sqrt{\sum_{S \in S_{xy}(r_{ys}-\overline{r_y})^2}}}$</p>
+<h3 id="Rating-Predictions"><a href="#Rating-Predictions" class="headerlink" title="Rating Predictions"></a>Rating Predictions</h3><p>N: the set of k users most similar to x who have rated item i</p>
+<p><strong>eg Prediction for item i of user x</strong></p>
+<p>$r_{xi}&#x3D;\frac{1}{k} \sum_{y \in N} r_{yi}$</p>
+<p>$r_{xi} &#x3D; \frac{\sum_{y \in N}S_{xy} \cdot r_{yi}}{\sum_{y \in N}S_{xy}}$</p>
+<h3 id="Pro"><a href="#Pro" class="headerlink" title="Pro"></a>Pro</h3><p>Works for any item kinds</p>
+<h3 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons"></a>Cons</h3><ol>
+<li>User&#x2F;Item cold start</li>
+<li>Sparsity</li>
+<li>Popularity bias</li>
+</ol>
+<h2 id="Metrics"><a href="#Metrics" class="headerlink" title="Metrics"></a>Metrics</h2><p><strong>Rating Prediction:</strong> MAE, RMSE</p>
+<p><strong>Top-n Rec:</strong></p>
+<p>$\text{Precision}&#x3D;\frac{tp}{tp+fp}$</p>
+<p>$\text{Recall}&#x3D;\frac{tp}{tp+fn}$</p>
+<p>$F_1&#x3D;2 \cdot \frac{precision \cdot recall}{ precision + recall}$, Optimal value &#x3D; 1</p>
+<p><strong>Normalised Discounted Cumulative Gain</strong></p>
+<p><strong>DCG</strong></p>
+<p>p: position up to which relevance is accumulated</p>
+<p>$rel_i:$ relevance of reccommendation at position i</p>
+<p>$DCG_p &#x3D; \sum\limits_{i&#x3D;1}^p \frac{2^{rel_i}-1}{\log_2(i+1)}$</p>
+<p><strong>Idealised DCG</strong></p>
+<p>Assumption that items are ordered by decreasing relevance</p>
+<p>$IDCG_p&#x3D;\sum\limits_{i&#x3D;1}^{|REL|} \frac{2^{rel_i}-1}{\log_2(i+1)}$</p>
+<p><strong>Normalised DCG</strong></p>
+<p>normalised to the interval [0,1]</p>
+<p>$nDCG_p&#x3D;\frac{DCG_p}{IDCG_p}$</p>
+<p><strong>Mean Average Precision(MAP)</strong></p>
+<p>Average of precision values after each successful prediction</p>
+<h2 id="Latent-Factor-Models"><a href="#Latent-Factor-Models" class="headerlink" title="Latent Factor Models"></a>Latent Factor Models</h2><h3 id="CF"><a href="#CF" class="headerlink" title="CF"></a>CF</h3><ol>
+<li>Item-Item CF<ul>
+<li>Predict ratings using similar items $s_{ij}$</li>
+<li>Weighted average of user x’s ratings for similar items.</li>
+</ul>
+</li>
+<li>Bias Model<ul>
+<li>Adjust for global mean $\mu$, user bias $b_u$, item bias  $b_i$ </li>
+<li>$\hat{r}_{ui} &#x3D; \mu + b_u + b_i$</li>
+</ul>
+</li>
+<li>Weighted CF<ul>
+<li>Combines biases and learned weights $w_{ij}$ </li>
+<li>$$\hat{r}<em>{ui} &#x3D; \mu + b_u + b_i + \sum w</em>{ij}(r_{uj} - \mu - b_u - b_j)$$</li>
+</ul>
+</li>
+</ol>
+<h3 id="MF"><a href="#MF" class="headerlink" title="MF"></a>MF</h3><ol>
+<li>Latent Factors<ul>
+<li>Decompose R as $P \cdot Q^T$</li>
+<li>Minimize error: $\min_{P, Q} \sum (r_{ui} - p_u \cdot q_i)^2 + \lambda (|P|^2 + |Q|^2)$</li>
+</ul>
+</li>
+<li>GD to update P,Q</li>
+</ol>
+<p><strong>Temporal Dynamics</strong></p>
+<ul>
+<li>Add time-dependence to biases $b_u(t), b_i(t)$ and factors $p_u(t)$</li>
+</ul>
+<p>Regularisation $\lambda$ prevents overfitting</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.fl334.com">fl_334</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.fl334.com/2024/12/15/MMDS2/">https://www.fl334.com/2024/12/15/MMDS2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/12/12/MMDS1/" title="MMDS 1"><img class="cover" src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png" onerror="onerror=null;src='/img/404.GIF'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">MMDS 1</div></div></a></div><div class="next-post pull-right"><a href="/2024/12/18/MMDS3/" title="MMDS 3"><img class="cover" src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png" onerror="onerror=null;src='/img/404.GIF'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">MMDS 3</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101658804.webp" onerror="this.onerror=null;this.src='/img/404.GIF'" alt="avatar"/></div><div class="author-info__name">fl_334</div><div class="author-info__description">日々にシフト</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fl334" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:flames3340912@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://t.me/fl_334" target="_blank" title="telegram"><i class="fas fa-brands fa-telegram"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">New to Coding~ Yoroshiku~((>﹏<))</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mining-of-Massive-Datasets"><span class="toc-number">1.</span> <span class="toc-text">Mining of Massive Datasets</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Clustering"><span class="toc-number">2.</span> <span class="toc-text">Clustering</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Similarity-Measuring"><span class="toc-number">2.1.</span> <span class="toc-text">Similarity Measuring</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Methods"><span class="toc-number">2.2.</span> <span class="toc-text">Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hierarchical"><span class="toc-number">2.2.1.</span> <span class="toc-text">Hierarchical</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Point-assignment"><span class="toc-number">2.2.2.</span> <span class="toc-text">Point assignment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#K-means"><span class="toc-number">2.3.</span> <span class="toc-text">K-means</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BFR-Bradley-Fayyad-Reina"><span class="toc-number">2.4.</span> <span class="toc-text">BFR(Bradley-Fayyad-Reina)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Three-Classes"><span class="toc-number">2.4.1.</span> <span class="toc-text">Three Classes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Processing"><span class="toc-number">2.4.2.</span> <span class="toc-text">Processing</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CURE-Clustering-Using-REpresentatives"><span class="toc-number">2.5.</span> <span class="toc-text">CURE(Clustering Using REpresentatives)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Pass"><span class="toc-number">2.5.1.</span> <span class="toc-text">2 Pass</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DimRed"><span class="toc-number">3.</span> <span class="toc-text">DimRed</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SVD"><span class="toc-number">3.1.</span> <span class="toc-text">SVD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Definitions"><span class="toc-number">3.1.1.</span> <span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Propertities"><span class="toc-number">3.1.2.</span> <span class="toc-text">Propertities</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Best-Low-Rank-Approx-Theorem"><span class="toc-number">3.1.3.</span> <span class="toc-text">Best Low Rank Approx Theorem</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CUR"><span class="toc-number">3.2.</span> <span class="toc-text">CUR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Comparison"><span class="toc-number">3.3.</span> <span class="toc-text">Comparison</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RecSys"><span class="toc-number">4.</span> <span class="toc-text">RecSys</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Content-based"><span class="toc-number">4.1.</span> <span class="toc-text">Content-based</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#User-Profiles-and-prediction"><span class="toc-number">4.1.1.</span> <span class="toc-text">User Profiles and prediction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pros"><span class="toc-number">4.1.2.</span> <span class="toc-text">Pros</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cons"><span class="toc-number">4.1.3.</span> <span class="toc-text">Cons</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collaborative-Filtering"><span class="toc-number">4.2.</span> <span class="toc-text">Collaborative Filtering</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Find-similar-users"><span class="toc-number">4.2.1.</span> <span class="toc-text">Find similar users</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rating-Predictions"><span class="toc-number">4.2.2.</span> <span class="toc-text">Rating Predictions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pro"><span class="toc-number">4.2.3.</span> <span class="toc-text">Pro</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cons-1"><span class="toc-number">4.2.4.</span> <span class="toc-text">Cons</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Metrics"><span class="toc-number">4.3.</span> <span class="toc-text">Metrics</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Latent-Factor-Models"><span class="toc-number">4.4.</span> <span class="toc-text">Latent Factor Models</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CF"><span class="toc-number">4.4.1.</span> <span class="toc-text">CF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MF"><span class="toc-number">4.4.2.</span> <span class="toc-text">MF</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/18/MMDS3/" title="MMDS 3">MMDS 3</a><time datetime="2024-12-18T11:04:30.000Z" title="Created 2024-12-18 06:04:30">2024-12-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/15/MMDS2/" title="MMDS 2">MMDS 2</a><time datetime="2024-12-15T09:01:43.000Z" title="Created 2024-12-15 04:01:43">2024-12-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/12/MMDS1/" title="MMDS 1">MMDS 1</a><time datetime="2024-12-12T19:32:17.000Z" title="Created 2024-12-12 14:32:17">2024-12-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By fl_334</div><div class="footer_custom_text">Ni-pah~</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/search/local-search.min.js"></script></div></div></body></html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html><html lang="en,cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Stats | fl_334's blog</title><meta name="author" content="fl_334"><meta name="copyright" content="fl_334"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Basic Stats 24-Fall">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stats">
+<meta property="og:url" content="https://www.fl334.com/2024/12/06/stats/index.html">
+<meta property="og:site_name" content="fl_334&#39;s blog">
+<meta property="og:description" content="Basic Stats 24-Fall">
+<meta property="og:locale">
+<meta property="og:image" content="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png">
+<meta property="article:published_time" content="2024-12-06T19:34:42.000Z">
+<meta property="article:modified_time" content="2024-12-20T03:40:52.596Z">
+<meta property="article:author" content="fl_334">
+<meta property="article:tag" content="Hypothesis Testing">
+<meta property="article:tag" content="Confidence Interval">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png"><link rel="shortcut icon" href="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101738222.GIF"><link rel="canonical" href="https://www.fl334.com/2024/12/06/stats/index.html"><link rel="preconnect" href="//cdnjs.cloudflare.com"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":1000,"languages":{"author":"Author: fl_334","link":"Link: ","source":"Source: fl_334's blog","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdnjs.cloudflare.com/ajax/libs/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Stats',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-19 22:40:52'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js"></script><script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/map/js/china.min.js"></script><link rel="stylesheet" href="/css/transparency.css"><link rel="stylesheet" href="/css/font.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101658804.webp" onerror="onerror=null;src='/img/404.GIF'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-fish"></i><span> Fish</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png')"><nav id="nav"><span id="blog-info"><a href="/" title="fl_334's blog"><span class="site-name">fl_334's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-snowflake"></i><span> Find</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-solid fa-fish"></i><span> Fish</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Stats</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2024-12-06T19:34:42.000Z" title="Created 2024-12-06 14:34:42">2024-12-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Stats/">Stats</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">3.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>24mins</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Data-Visualisation"><a href="#Data-Visualisation" class="headerlink" title="Data Visualisation"></a>Data Visualisation</h1><h2 id="Visualisation-Histogram"><a href="#Visualisation-Histogram" class="headerlink" title="Visualisation: Histogram"></a>Visualisation: Histogram</h2><ul>
+<li>Relative Frequency Histogram</li>
+<li>Shows the location of the centre of the data</li>
+<li>Shows the spread of the data</li>
+</ul>
+<h2 id="Skewness"><a href="#Skewness" class="headerlink" title="Skewness"></a>Skewness</h2><p>Data skewed to the right (positively skewed) have a longer right tail</p>
+<h2 id="Dot-plots"><a href="#Dot-plots" class="headerlink" title="Dot plots"></a>Dot plots</h2><p>A graph of quantitative data where each data value is plotted as a dot above a horizontal scale of values. </p>
+<p>Dots representing equal values are stacked.</p>
+<h2 id="Stem-plots-Stem-and-Leaf-plot"><a href="#Stem-plots-Stem-and-Leaf-plot" class="headerlink" title="Stem plots(Stem-and-Leaf plot)"></a>Stem plots(Stem-and-Leaf plot)</h2><p>Represents quantitative data by separating each value into two parts: the stem and the leaf</p>
+<h2 id="Time-Series-Graph"><a href="#Time-Series-Graph" class="headerlink" title="Time-Series Graph"></a>Time-Series Graph</h2><p>A graph of time-series data</p>
+<h2 id="Pie-Chart"><a href="#Pie-Chart" class="headerlink" title="Pie Chart"></a>Pie Chart</h2><h2 id="Frequency-Polygon"><a href="#Frequency-Polygon" class="headerlink" title="Frequency Polygon"></a>Frequency Polygon</h2><h2 id="Pictograph"><a href="#Pictograph" class="headerlink" title="Pictograph"></a>Pictograph</h2><p>Representing data using images</p>
+<h2 id="Hints"><a href="#Hints" class="headerlink" title="Hints"></a>Hints</h2><ul>
+<li>Be careful w Nonzero Vertical Axis</li>
+</ul>
+<h1 id="Descriptive-Stat"><a href="#Descriptive-Stat" class="headerlink" title="Descriptive Stat"></a>Descriptive Stat</h1><p><strong>Measure of center:</strong> a value at the center&#x2F;middle of a data set</p>
+<p><strong>Mean(Average)</strong></p>
+<p><strong>Median:</strong> The value that cuts the data exactly in half</p>
+<p><strong>Mode:</strong> The value in the data set that occurs most frequently</p>
+<p><strong>Midrange</strong>:$\frac{Max+Min}{2}$, not resistant</p>
+<h1 id="Measures-of-Variation"><a href="#Measures-of-Variation" class="headerlink" title="Measures of Variation"></a>Measures of Variation</h1><p>Describe how spread out the point in a data set are.</p>
+<h2 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h2><p>$Range &#x3D; Max-Min$</p>
+<h2 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h2><p>A measure of how much the data values deviate from the mean.</p>
+<p>Population consisting of N values</p>
+<p>$\sigma ^2&#x3D;\frac{(x_1-\mu)^2+\cdots+(x_n-\mu)^2}{N}&#x3D;\frac{1}{N}\sum\limits_{i&#x3D;1}^N(x_i-\mu)^2$</p>
+<p>Sample consisting of n values</p>
+<p>$s^2&#x3D;\frac{(x_1-\overline{\mu})^2+\cdots+(x_n-\overline{\mu})^2}{n - 1}&#x3D;\frac{1}{n-1}\sum\limits_{i&#x3D;1}^n(x_i-\overline{x})^2$</p>
+<p>never negative, zero only when all of the data values are exactly the same</p>
+<p>Not resistant cuz its sensitive to extreme values</p>
+<p><strong>why use (n-1) to compute $s^2$</strong></p>
+<p>It makes $s^2$ an unbiased estimator of $\sigma^2$</p>
+<h2 id="Standard-Deviation"><a href="#Standard-Deviation" class="headerlink" title="Standard Deviation"></a>Standard Deviation</h2><p>Square root of the variance</p>
+<p><strong>Population standard deviation</strong></p>
+<p>$\sigma&#x3D;\sqrt{\sigma^2}$</p>
+<p><strong>Sample standard deviation</strong></p>
+<p>$s&#x3D;\sqrt{s^2}$</p>
+<h2 id="Standard-Scores-z-scores"><a href="#Standard-Scores-z-scores" class="headerlink" title="Standard Scores(z-scores)"></a>Standard Scores(z-scores)</h2><p>The number of standard deviations that x lies above the mean</p>
+<p><strong>population</strong></p>
+<p>$z&#x3D;\frac{x-\mu}{\sigma}$</p>
+<p><strong>sample</strong></p>
+<p>$z&#x3D;\frac{x-\overline{x}}{s}$</p>
+<p>if $x &lt; \overline{x} \text{ or x} &lt;  \mu$ then $z &lt; 0$</p>
+<h2 id="Percentiles"><a href="#Percentiles" class="headerlink" title="Percentiles"></a>Percentiles</h2><h3 id="kth-Percentile"><a href="#kth-Percentile" class="headerlink" title="kth Percentile"></a>kth Percentile</h3><img src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202412061442935.png" style="zoom: 50%;" />
+
+<p>A value $P_k$ such that k% of the values in the data set lie below it</p>
+<p>Median: 50th percentile</p>
+<p>first quartile $Q_1$: 25th percentile</p>
+<p>third quartile $Q_3$: 75 percentile</p>
+<h2 id="IQR"><a href="#IQR" class="headerlink" title="IQR"></a>IQR</h2><p>$IQR&#x3D;Q_3-Q_1$</p>
+<p><strong>Five-Number Summary</strong></p>
+<p>A concise summary of the data using five numbers:</p>
+<p>Minimum, $Q_1$, Median, $Q_3$, Maximum</p>
+<h2 id="Boxplots"><a href="#Boxplots" class="headerlink" title="Boxplots"></a>Boxplots</h2><ul>
+<li>A line extending from the minimum value to the maximum value</li>
+<li>A box with lines drawn at $Q_1$, the median and $Q_3$</li>
+<li>A method for visulizing the five-number summary of a data set</li>
+</ul>
+<h3 id="Modifies-Boxplots"><a href="#Modifies-Boxplots" class="headerlink" title="Modifies Boxplots"></a>Modifies Boxplots</h3><p>Modify the original boxplot to show extreme observations or outliers</p>
+<ol>
+<li><p>Find the quartiles $Q_1,Q_2,Q_3$</p>
+</li>
+<li><p>Compute  $IQR&#x3D;Q_3-Q_1$</p>
+</li>
+<li><p>In a modifies boxplot, a data value is considered an outlier</p>
+<p>if it is greater than $Q_3+1.5 \cdot IQR$ or it is less than $Q_1-1.5 \cdot IQR$</p>
+</li>
+</ol>
+<p>A special symbol is used to identify outliers</p>
+<p>The solid horizontal line extends only as far as the minimum data value that is not an outlier and the maximum data value that is not an outlier</p>
+<h1 id="Probability"><a href="#Probability" class="headerlink" title="Probability"></a>Probability</h1><h2 id="Law-of-Large-Numbers"><a href="#Law-of-Large-Numbers" class="headerlink" title="Law of Large Numbers"></a>Law of Large Numbers</h2><p>The relative frequency probability of an event tends to approach the actual probability.</p>
+<h2 id="Subjective-Probability"><a href="#Subjective-Probability" class="headerlink" title="Subjective Probability"></a>Subjective Probability</h2><p>Estimate the probability of an event by using knowledge of the relevant circumstances</p>
+<h2 id="Mutually-Exclusive-Events"><a href="#Mutually-Exclusive-Events" class="headerlink" title="Mutually Exclusive Events"></a>Mutually Exclusive Events</h2><p>A and B never occur at the same time</p>
+<p>Repeatedly sample items from a population</p>
+<ul>
+<li><strong>Sampling with replacement</strong><ul>
+<li>Each time observe the item and put it back in the population</li>
+</ul>
+</li>
+<li><strong>Sampling without replacement</strong><ul>
+<li>Each time observe it and remove it from the population</li>
+</ul>
+</li>
+</ul>
+<h2 id="Bayes-Theorem"><a href="#Bayes-Theorem" class="headerlink" title="Bayes Theorem"></a>Bayes Theorem</h2><p>$P(A|B)&#x3D;\frac{P(B|A)P(A)}{P(B)}&#x3D;\frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|\overline{A})P(\overline{A})}$</p>
+<p><strong>Permutations</strong>: $P(n,r)&#x3D;\frac{n!}{(n-r)!}$</p>
+<p><strong>Combinations</strong>:$C(n,r)&#x3D;\frac{n!}{(n-r)!r!}$</p>
+<h1 id="Discrete-Probability-Distributions"><a href="#Discrete-Probability-Distributions" class="headerlink" title="Discrete Probability Distributions"></a>Discrete Probability Distributions</h1><h2 id="Random-Variable"><a href="#Random-Variable" class="headerlink" title="Random Variable"></a>Random Variable</h2><p>A number with each outcome in the sample space S in a proabbility experiment.</p>
+<p>$$X: S \rightarrow \mathbb{R}, i.e, \ \text{A function mapping outcomes in S to real numbers}$$</p>
+<h2 id="Discrete-Random-Variables"><a href="#Discrete-Random-Variables" class="headerlink" title="Discrete Random Variables"></a>Discrete Random Variables</h2><p>A random variable is discrete if it can take a finite or countably infinite number of different values</p>
+<h2 id="Continuous-Random-Variables"><a href="#Continuous-Random-Variables" class="headerlink" title="Continuous Random Variables"></a>Continuous Random Variables</h2><p>A random variable is continuous if it can take on an infinite number of different values that cannot be listed</p>
+<h2 id="Discrete-Probability-Distribution"><a href="#Discrete-Probability-Distribution" class="headerlink" title="Discrete Probability Distribution"></a>Discrete Probability Distribution</h2><p><strong>Probability Mass Function</strong></p>
+<p>$p(x)&#x3D;P(X&#x3D;x)$</p>
+<p>$\sum\limits_xp(x)&#x3D;1$</p>
+<h3 id="Mean-Variabnce-Standard-Deviation"><a href="#Mean-Variabnce-Standard-Deviation" class="headerlink" title="Mean&#x2F;Variabnce&#x2F;Standard Deviation"></a>Mean&#x2F;Variabnce&#x2F;Standard Deviation</h3><p><strong>Mean of X(Expected value of X)</strong></p>
+<p>$\mu&#x3D;\sum\limits_xx\cdot p(x)$</p>
+<p><strong>Variance of X</strong></p>
+<p>$\sigma_x^2&#x3D;\sum\limits_x[x^2\cdot p(x)]-\mu^2&#x3D;\sum\limits_x(x-\mu )^2\cdot p(x)$</p>
+<p><strong>Standard Deviation</strong></p>
+<p>$\sigma_x&#x3D;\sqrt{\sigma_x^2}$</p>
+<h1 id="Binomial-Distribution"><a href="#Binomial-Distribution" class="headerlink" title="Binomial Distribution"></a>Binomial Distribution</h1><h2 id="Binomial-Random-Variable"><a href="#Binomial-Random-Variable" class="headerlink" title="Binomial Random Variable"></a>Binomial Random Variable</h2><p>X &#x3D; number of successes in the n trials</p>
+<h2 id="Probability-Mass-Function"><a href="#Probability-Mass-Function" class="headerlink" title="Probability Mass Function"></a>Probability Mass Function</h2><p>A binomial experiment consisting of n trials with proabbility of success p</p>
+<p>If X is the binomial random variable for thie experiment</p>
+<p>$X$ ~ $Bin(n,p)$</p>
+<p>$p(x)&#x3D;P(X&#x3D;x)&#x3D;_nC_x p^x(1-p)^{n-x}$</p>
+<h2 id="Mean-Variance-Standard-Deviation"><a href="#Mean-Variance-Standard-Deviation" class="headerlink" title="Mean&#x2F;Variance&#x2F;Standard Deviation"></a>Mean&#x2F;Variance&#x2F;Standard Deviation</h2><p>$\mu_x&#x3D;np$</p>
+<p>$\sigma_x^2&#x3D;np(1-p)$</p>
+<p>$\sigma_x&#x3D;\sqrt{np(1-p)}$</p>
+<h1 id="Poisson-Distribution"><a href="#Poisson-Distribution" class="headerlink" title="Poisson Distribution"></a>Poisson Distribution</h1><p>$P(x)&#x3D;\frac{\mu^x\cdot e^{-\mu}}{x!}$ $(x&#x3D;0,1,2\cdots)$</p>
+<p>$x$ ~ $Poiss(\mu)$</p>
+<p>Assumption: Occurrences are:</p>
+<ul>
+<li>Random</li>
+<li>Independent of one another</li>
+<li>Uniformly distributed over the interval being used</li>
+</ul>
+<p><strong>Mean</strong></p>
+<p>$\mu_x&#x3D;\mu$</p>
+<p><strong>Variance</strong></p>
+<p>$\sigma_x^2&#x3D;\mu$</p>
+<p><strong>Standard Deviation</strong></p>
+<p>$\sigma_x&#x3D;\sqrt{\mu}$</p>
+<h1 id="Probability-Density-Function"><a href="#Probability-Density-Function" class="headerlink" title="Probability Density Function"></a>Probability Density Function</h1><ol>
+<li>$f(x)\geq 0$ for all x</li>
+<li>The total area under the graph of f equals 1</li>
+</ol>
+<h1 id="Standard-Normal-Distribution"><a href="#Standard-Normal-Distribution" class="headerlink" title="Standard Normal Distribution"></a>Standard Normal Distribution</h1><p>$f(z)&#x3D;\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}$</p>
+<p>$-\infty &lt; z &lt; \infty$</p>
+<h1 id="Normal-Distribution"><a href="#Normal-Distribution" class="headerlink" title="Normal Distribution"></a>Normal Distribution</h1><p>A continous random variable X has a normal distribution with parameters $-\infty &lt; \mu &lt; \infty$ and $\sigma^2 &gt;0$ if it has a probability density function of the form</p>
+<p>$f(x)&#x3D;\frac{1}{\sqrt{2 \pi \sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}},-\infty &lt; x &lt; \infty$</p>
+<p>A standard normal distribution: $\mu &#x3D; 0$, $\sigma&#x3D;1$, $Z$~ $N(0,1)$</p>
+<h2 id="Mean-Variance-Standard-Deviation-1"><a href="#Mean-Variance-Standard-Deviation-1" class="headerlink" title="Mean&#x2F;Variance&#x2F;Standard Deviation"></a>Mean&#x2F;Variance&#x2F;Standard Deviation</h2><p>$X$~ $N(\mu,\sigma^2)$</p>
+<p>$\mu_x&#x3D;\mu$, $\sigma_x^2&#x3D;\sigma^2$, $\sigma_x&#x3D;\sigma$</p>
+<h2 id="Standardise"><a href="#Standardise" class="headerlink" title="Standardise"></a>Standardise</h2><p><strong>Z-Score</strong></p>
+<p>$Z&#x3D;\frac{x-\mu}{\sigma}$</p>
+<p>$Z$~ $N(0,1)$</p>
+<p>$z_{0.05}&#x3D;1.645$, 95% confidence level</p>
+<h2 id="Sampling-Distribution"><a href="#Sampling-Distribution" class="headerlink" title="Sampling Distribution"></a>Sampling Distribution</h2><p>$\overline{X}$ ~ $N(\mu, \frac{\sigma^2}{n})$</p>
+<p>if Sample is normal, sample mean is also normal with mean $\mu$ and standard deviation $\frac{\sigma}{\sqrt{n}}$</p>
+<p>n increases, the standard deviation $\frac{\sigma}{\sqrt{N}}$ of $\overline{X}$ gets smaller</p>
+<p>Larger samples yield less variability in sample mean</p>
+<h2 id="Central-Limit-Theorem"><a href="#Central-Limit-Theorem" class="headerlink" title="Central Limit Theorem"></a>Central Limit Theorem</h2><p>$X_1,X_2,\cdots,X_n$ : a random sample from a distribution with mean $\mu$ and standard deviation $\sigma$</p>
+<p> If n is sufficiently large, $\overline{X}$ has approximately a $N(\mu,\frac{\sigma^2}{n})$ distribution</p>
+<p>$X_1 + X_2 + \cdots + X_n &#x3D; n \overline{X}$ also approximately normal</p>
+<h1 id="Point-and-Interval-Estimation"><a href="#Point-and-Interval-Estimation" class="headerlink" title="Point and Interval Estimation"></a>Point and Interval Estimation</h1><h2 id="Point-Estimate"><a href="#Point-Estimate" class="headerlink" title="Point Estimate"></a>Point Estimate</h2><p>A point estimate $\hat{\theta}$ of a parameter $\theta$ is a single number that can be regarded as a sensible value for $\theta$</p>
+<h2 id="Unbiased-Estimator"><a href="#Unbiased-Estimator" class="headerlink" title="Unbiased Estimator"></a>Unbiased Estimator</h2><p>A point estimator $\hat{\theta}$ of a parameter $\theta$ is unbiased if $E(\hat{\theta})&#x3D;\theta$</p>
+<p><strong>MVUE</strong>: Minimum variance unbiased estimator</p>
+<p><strong>Theorem</strong>: Let $X_1, X_2, \cdots, X_n$ be a random sample from a normal distribution with Mean $\mu$ and variance $\sigma^2$. Then the estimator $\hat{\mu}&#x3D;\overline{X}$ is the MVUE for $\mu$</p>
+<h2 id="Interval-Estimation"><a href="#Interval-Estimation" class="headerlink" title="Interval Estimation"></a>Interval Estimation</h2><p>Estimate a range of possible values for our parameter</p>
+<p>Since $X_1, X_2, \cdots, X_n$  are drawn from a normal distribution with mean $\mu$ and variance $\sigma^2$, $\overline{X}$~ $N(\mu,\frac{\sigma}{n})$</p>
+<p>Standardize $\overline{X}$ like $Z&#x3D;\frac{\overline{X}-\mu}{\sigma &#x2F; \sqrt{n}}$</p>
+<p>We have Z ~ N(0,1)</p>
+<p>Common Critical Values</p>
+<p>Common Confidence Level Critical Value</p>
+<p>0.90                        1.645</p>
+<p>0.95                        1.96</p>
+<p>0.99                        2.575</p>
+<h2 id="Normal-Confidence-Interval-for-mu-sigma-known"><a href="#Normal-Confidence-Interval-for-mu-sigma-known" class="headerlink" title="Normal Confidence Interval for $\mu$($\sigma$ known)"></a>Normal Confidence Interval for $\mu$($\sigma$ known)</h2><p>Let $X_1, X_2, \cdots, X_n$ be a random sample from a normal distribution with unknown mean $\mu$ and known standard deviation $\sigma$</p>
+<p>For Any $0 \leq \alpha \leq 1$, a $100(1-\alpha)%$ confidence interval for $\mu$ is:</p>
+<p>$\overline{X}-z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt{n}} &lt; \mu &lt; \overline{X} + z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt{n}}$</p>
+<p>$P(\overline{X}-z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt{n}} &lt; \mu &lt; \overline{X} + z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt{n}})&#x3D;1-\alpha$</p>
+<h2 id="Normal-Confidence-Interval-for-mu-sigma-unknown"><a href="#Normal-Confidence-Interval-for-mu-sigma-unknown" class="headerlink" title="Normal Confidence Interval for $\mu$($\sigma$ unknown)"></a>Normal Confidence Interval for $\mu$($\sigma$ unknown)</h2><p>Let $X_1, X_2, \cdots, X_n$ be a random sample from a normal distribution with unknown mean $\mu$ and known standard deviation $\sigma$</p>
+<p>Use sample standard deviation S to estimate the population stadard deviation $\sigma$</p>
+<p>$T&#x3D;\frac{\overline{X}-\mu}{S&#x2F; \sqrt{n}}$</p>
+<p>T has t distribution with (n-1) degrees of freedom(df)</p>
+<h2 id="t-distribution"><a href="#t-distribution" class="headerlink" title="t distribution"></a>t distribution</h2><p><img src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202412061444981.png"></p>
+<p>One single parameter: degrees of freedom v (in our case, v &#x3D; n - 1)</p>
+<p>The distribution is symmetric</p>
+<p>Mean is zero.</p>
+<p>As df v gets really large, t distribution looks more like a standard normal distribution.</p>
+<p>If T has such a distribution,</p>
+<p>$t_{\alpha, n - 1}$ is the value such that $P(T&gt;t_{\alpha, n-1})&#x3D;\alpha$</p>
+<p>$P(-t_{\frac{\alpha}{2},n-1}&lt;T&lt;t_{\frac{\alpha}{2},n-1}) &#x3D; 1 - \alpha$</p>
+<p>$P(-t_{\frac{\alpha}{2},n-1}&lt;\frac{\overline{X}-\mu}{S&#x2F; \sqrt{n}}&lt;t_{\frac{\alpha}{2},n-1}) &#x3D; 1 - \alpha$</p>
+<p>$P(\overline{X}-t_{\frac{\alpha}{2},n-1}\cdot \frac{S}{\sqrt{n}} &lt; \mu &lt; \overline{X}+t_{\frac{\alpha}{2},n-1}\cdot \frac{S}{\sqrt{n}})&#x3D;1-\alpha$</p>
+<p>$(0 \leq \alpha \leq 1, 100(1-\alpha)$% $\text{confidence interval for }\mu)$</p>
+<h2 id="Large-Sample-Confidence-Interval-for-mu"><a href="#Large-Sample-Confidence-Interval-for-mu" class="headerlink" title="Large Sample Confidence Interval for $\mu$"></a>Large Sample Confidence Interval for $\mu$</h2><p>Let $X_1, X_2, \cdots, X_n$ be a random sample from a normal distribution with unknown mean $\mu$ and known standard deviation $\sigma$(not necessarily a normal distribution)</p>
+<p>For any $0 \leq \alpha \leq 1$, an approximate $100(1-\alpha)$ % confidence interval for $\mu$ is as follows</p>
+<p>$\overline{X}-z_{\frac{\alpha}{2}}\cdot \frac{S}{\sqrt{n}} &lt; \mu &lt; \overline{X}+z_{\frac{\alpha}{2}}\cdot \frac{S}{\sqrt{n}}$</p>
+<h3 id="Control-the-interval-width"><a href="#Control-the-interval-width" class="headerlink" title="Control the interval width"></a>Control the interval width</h3><p>suppose normally distributed with $\sigma$</p>
+<p>$\overline{X}-z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt{n}} &lt; \mu &lt; \overline{X}+z_{\frac{\alpha}{2}}\cdot \frac{\sigma}{\sqrt{n}}$</p>
+<p>width of this confidence interval is $w&#x3D;2z_{\frac{\alpha}{2} }\cdot   \frac{\sigma}{\sqrt{n}}$</p>
+<p>$n&#x3D;(\frac{2z_{\frac{\alpha}{2}}\sigma}{w})^2$</p>
+<h3 id="Confidence-Interval-for-p"><a href="#Confidence-Interval-for-p" class="headerlink" title="Confidence Interval for p"></a>Confidence Interval for p</h3><p>A binomial experiment with n trials and an unknown probability of success p. Let X be the number of successes in the n trials.</p>
+<p>natural point estimator for p is $\hat{p} &#x3D;\frac{X}{N}$ i.e, the proportion of success in the n trials</p>
+<p>if both $np \geq 10$ and $n(1-p) \geq 10$,then  $\hat{p}$ approximately normally distributed by the Central Limit Theorem</p>
+<p>$\hat{p} \approx N(p, \frac{p(1-p)}{n})$</p>
+<p>Standardising $\hat{p}$</p>
+<p>$Z&#x3D;\frac{\hat{p}-p}{\sqrt{p(1-p)&#x2F;n}} \approx N(0,1)$</p>
+<p>$P(-z_{\frac{\alpha}{2}}&lt; \frac{\hat{p}-p}{\sqrt{p(1-p)&#x2F;n}} &lt; z_{\frac{\alpha}{2}}) \approx 1-\alpha$</p>
+<p>$0 \leq \alpha \leq 1$, appr $100(1-\alpha)$ % CI for p</p>
+<p>$\frac{\hat{p}+z_{\alpha &#x2F; 2}^2 &#x2F; 2 n}{1+z_{\alpha &#x2F; 2}^2 &#x2F; n} \pm z_{\alpha &#x2F; 2} \frac{\sqrt{\hat{p}(1-\hat{p}) &#x2F; n+z_{\alpha &#x2F; 2}^2 &#x2F; 4 n^2}}{1+z_{\alpha &#x2F; 2}^2 &#x2F; n}$</p>
+<h1 id="Hypothesis-Testing"><a href="#Hypothesis-Testing" class="headerlink" title="Hypothesis Testing"></a>Hypothesis Testing</h1><table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>H₀ is True</th>
+<th>H₀ is False</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Fail to Reject H₀</td>
+<td>Correct Decision</td>
+<td>Type II Error</td>
+</tr>
+<tr>
+<td>Reject H₀</td>
+<td>Type I Error</td>
+<td>Correct Decision</td>
+</tr>
+</tbody></table>
+<p>$\alpha&#x3D;P$(Type I Error)</p>
+<p>$\beta&#x3D;P$(Type || Error)</p>
+<p>$\beta$ depends on the true value of the parameter we’re testing</p>
+<p>Controlling $\beta$ can get complicated, so we can control $\alpha$</p>
+<p>A hypothesis test with a probability $\alpha$ of making a Type I error is known as a level $\alpha$ test</p>
+<h2 id="Tests-of-H-0-mu-mu-0"><a href="#Tests-of-H-0-mu-mu-0" class="headerlink" title="Tests of $H_0:\mu&#x3D;\mu_0$"></a>Tests of $H_0:\mu&#x3D;\mu_0$</h2><p>Consider a sample $X_1, X_2, \cdots, X_n$ from a normal distribution with mean $\mu$ and standard deviation $\sigma$. Suppose $\sigma$ is known</p>
+<p>Two-tailed test of $H_0:\mu&#x3D;\mu_0$</p>
+<p>A leval $\alpha$ test of $H_0$: $\mu&#x3D;\mu_0$ vs $H_1:\mu \neq \mu_0$ is  as follows</p>
+<p>Reject $H_0$ if $Z &lt; -z_{\alpha&#x2F;2}$ or $Z &gt; z_{\alpha&#x2F;2}$</p>
+<p>The test statistic:</p>
+<p>$Z&#x3D;\frac{\overline{X}-\mu_0}{\sigma &#x2F; \sqrt{n}}$</p>
+<table>
+<thead>
+<tr>
+<th>H1</th>
+<th>Reject $H_0$ if</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$\mu \neq \mu_0$</td>
+<td>$z &lt; -z_{\alpha&#x2F;2}$ or $z &gt; z_{\alpha&#x2F;2}$</td>
+</tr>
+<tr>
+<td>$\mu &lt; \mu_0$</td>
+<td>$z &lt; -z_{\alpha}$</td>
+</tr>
+<tr>
+<td>$\mu &gt; \mu_0$</td>
+<td>$z &gt; z_{\alpha}$</td>
+</tr>
+</tbody></table>
+<h1 id="Inferences-from-Two-Samples"><a href="#Inferences-from-Two-Samples" class="headerlink" title="Inferences from Two Samples"></a>Inferences from Two Samples</h1><h2 id="Comparing-Independent-Populations"><a href="#Comparing-Independent-Populations" class="headerlink" title="Comparing Independent Populations"></a>Comparing Independent Populations</h2><p>$H_0:\mu1-\mu2 &#x3D; 0,H_1: \mu1-\mu2 \neq 0$</p>
+<p>$\overline{X}-\overline{Y}$ is an unbiased estimator of $\mu1-\mu2$</p>
+<p>Since populations are normal $\overline{X}-\overline{Y}$ has a normal distribution</p>
+<p>Assuming that $H_0$ is true, then $\mu1-\mu2&#x3D;0$</p>
+<p>$\overline{X}-\overline{Y}$ ~ $N(0,\frac{\sigma_1^2}{m}+\frac{\sigma_2^2}{n})$</p>
+<p>Standardize</p>
+<p>$Z&#x3D;\frac{\overline{X}-\overline{Y}}{\sqrt{\sigma_1^2&#x2F;m+\sigma_2^2&#x2F;n}}$~N(0,1)</p>
+<p>Reject $H_0$ if z &lt; $-z_{\alpha&#x2F;2}$ or $z &gt; z_{\alpha&#x2F;2}$</p>
+<p>Generalise to different $H_1$</p>
+<table>
+<thead>
+<tr>
+<th>H1</th>
+<th>Reject $H_0$ if</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$\mu_1 - \mu_2 \neq 0$</td>
+<td>$z$ &lt; $-z_{\alpha&#x2F;2}$ or $z &gt; z_{\alpha&#x2F;2}$</td>
+</tr>
+<tr>
+<td>$\mu_1-\mu_2 &lt; 0$</td>
+<td>$z &lt; -z_{\alpha}$</td>
+</tr>
+<tr>
+<td>$\mu_1-\mu_2 &gt; 0$</td>
+<td>$z &gt; z_{\alpha}$</td>
+</tr>
+</tbody></table>
+<h2 id="Confidence-Interval-for-mu-1-mu-2"><a href="#Confidence-Interval-for-mu-1-mu-2" class="headerlink" title="Confidence Interval for $\mu_1-\mu_2$"></a>Confidence Interval for $\mu_1-\mu_2$</h2><p>construct a $100(1-\alpha)$% CI for $\mu_1-\mu_2$</p>
+<p>$\overline{X}-\overline{Y}$~ $N(\mu_1-\mu_2,  \frac{\sigma^2}{m}+\frac{\sigma^2}{n})$</p>
+<p>Standardize</p>
+<p>$Z&#x3D;\frac{\overline{X}-\overline{Y}-(\mu_1-\mu_2)}{\sqrt{\sigma_1^2&#x2F;m+\sigma_2^2&#x2F;n}}$~N(0,1)</p>
+<p>$P(-z_{\alpha&#x2F;2}&lt;\frac{\overline{X}-\overline{Y}-(\mu_1-\mu_2)}{\sqrt{\sigma_1^2&#x2F;m+\sigma_2^2&#x2F;n}}&lt;z_{\alpha&#x2F;2})&#x3D;1-\alpha$</p>
+<p>CI: $\overline{X}-\overline{Y} \pm z_{\alpha&#x2F;2} \cdot \sqrt{\frac{\sigma_1^2}{m}+\frac{\sigma_2^2}{n}}$</p>
+<h2 id="Two-Sample-t-Test"><a href="#Two-Sample-t-Test" class="headerlink" title="Two-Sample t Test"></a>Two-Sample t Test</h2><p>Under $H_0$, test statistic</p>
+<p>$T &#x3D; \frac{\overline{X}-\overline{Y}}{\sqrt{S_1^2&#x2F;m+S_2^2&#x2F;n}} \approx t_{\nu}$</p>
+<p>Degree of freedom $\nu$, round down to the nearest whole number</p>
+<p>$\nu &#x3D;\frac{(s_1^2&#x2F;m+s_2^2&#x2F;n)^2}{\frac{(s_1^2&#x2F;m)^2}{m-1}+\frac{(s_2^2&#x2F;n)^2}{n-1}}$</p>
+<table>
+<thead>
+<tr>
+<th>H1</th>
+<th>Reject $H_0$​﻿ if</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$\mu_1 - \mu_2 \neq 0$</td>
+<td>$t &lt; -t_{\alpha&#x2F;2,\nu}$ or $t &gt; t_{\alpha&#x2F;2,\nu}$</td>
+</tr>
+<tr>
+<td>$\mu_1-\mu_2 &lt; 0$</td>
+<td>$t &lt; -t_{\alpha,\nu}$</td>
+</tr>
+<tr>
+<td>$μ1−μ2&gt;0$</td>
+<td>$t &gt; t_{\alpha,\nu}$</td>
+</tr>
+</tbody></table>
+<h2 id="Pooled-t-Test"><a href="#Pooled-t-Test" class="headerlink" title="Pooled t Test"></a>Pooled t Test</h2><p>Under the assumption $\sigma_1&#x3D;\sigma_2$</p>
+<p><strong>Pooled estimator of $\sigma^2$</strong></p>
+<p>$S_p^2 &#x3D; \frac{m - 1}{m + n - 2} S_1^2 + \frac{n - 1}{m + n - 2} S_2^2$</p>
+<p>$\nu &#x3D; m + n - 2$</p>
+<p><strong>CI</strong></p>
+<p>$\bar{X}-\bar{Y} \pm  t_{\alpha&#x2F;2,\nu} \cdot\sqrt{\frac{S_1^2}{m}+\frac{S_2^2}{n}}$</p>
+<h2 id="Paired-t-Test"><a href="#Paired-t-Test" class="headerlink" title="Paired t Test"></a>Paired t Test</h2><p>data of pairs: $(X_1,Y_1), (X_2, Y_2),\cdots,(X_n,Y_n)$</p>
+<p>Differences: $D_1&#x3D;Y_1-X_1, D_2&#x3D;Y_2-X_2, \cdots, D_n&#x3D;Y_n-X_n$</p>
+<p>test $H_0:\mu_D&#x3D;0$ against $H_1:\mu_D \neq 0, H_1:\mu_D&gt;0,H_1:\mu_D&lt;0$</p>
+<p>Construct level $\alpha$ tests</p>
+<p>test statistic $T&#x3D;\frac{\bar{D}}{S_D&#x2F; \sqrt{n}}$~ $t_{n-1}$</p>
+<table>
+<thead>
+<tr>
+<th>H1</th>
+<th>Reject $H_0$​﻿ if</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$\mu_D \neq 0$</td>
+<td>$t &lt; -t_{\alpha&#x2F;2,n-1}$ or $t &gt; t_{\alpha&#x2F;2,n-1}$</td>
+</tr>
+<tr>
+<td>$\mu_D&lt; 0$</td>
+<td>$t &lt; -t_{\alpha,n-1}$</td>
+</tr>
+<tr>
+<td>$\mu_D&gt;0$</td>
+<td>$t &gt; t_{\alpha,n-1}$</td>
+</tr>
+</tbody></table>
+<h2 id="Confidence-Interval-for-mu-D"><a href="#Confidence-Interval-for-mu-D" class="headerlink" title="Confidence Interval for $\mu_D$"></a>Confidence Interval for $\mu_D$</h2><p>$P(-t_{\alpha&#x2F;2,n-1}&lt;\frac{\bar{D}}{S_D&#x2F; \sqrt{n}}&lt;t_{\alpha&#x2F;2,n-1})&#x3D;1-\alpha$</p>
+<p>CI: $\bar{D} \pm t_{\alpha&#x2F;2,n-1} \cdot \frac{S_D}{\sqrt{n}}$</p>
+<h2 id="Comparing-Population-Proportions"><a href="#Comparing-Population-Proportions" class="headerlink" title="Comparing Population Proportions"></a>Comparing Population Proportions</h2><p>Proportion of successes for the two population: p1, p2</p>
+<p>Test the hypotheses</p>
+<p>$H_0:p1-p2 &#x3D; 0$ against $H_1: p1-p2 \neq 0,H_1:p1-p2&gt;0, H_1:p1-p2&lt;0$</p>
+<p>x: the number of success in the sample from the first population</p>
+<p>y: the number of success in the sample from the second population</p>
+<p>then x and y each have binomial distribution</p>
+<p>Use sample proportions $\hat{p_1}&#x3D;\frac{x}{m}$ and $\hat{p_2}&#x3D;\frac{y}{n}$ to develop a test statistic</p>
+<p>suppose $H_0$ is true, then p1&#x3D;p2&#x3D;p</p>
+<p>If $np \geq 10, n(1-p) \geq 10$</p>
+<p>then the following test statistic has an approximate normal distribution</p>
+<p>(Application of the Central Limit Theorem)</p>
+<p>$z &#x3D; \frac{\hat{p_1}-\hat{p_2}}{\sqrt{p(1-p)(\frac{1}{m}+\frac{1}{n}})}$~N(0,1)</p>
+<p>Since we are assuming p1&#x3D;p2&#x3D;p(i.e, $H_0$ is true), we can use data from both samples to estimate the common p</p>
+<p>The natural estimator of p is</p>
+<p>$\hat{p}&#x3D;\frac{x+y}{m+n}&#x3D;\frac{m}{m+n} \cdot \hat{p_1} + \frac{n}{m+n} \cdot \hat{p_2}$</p>
+<p>substitute $\hat{p}$ for $p$</p>
+<p>$z &#x3D; \frac{\hat{p_1}-\hat{p_2}}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{m}+\frac{1}{n})}}$ ~N(0, 1)</p>
+<p>Must Assume: $m\hat{p_1} \geq 10, m(1-\hat{p_1}) \geq 10, n\hat{p_2} \geq 10, n(1-\hat{p_2}) \geq 10$</p>
+<table>
+<thead>
+<tr>
+<th>H1</th>
+<th>Reject $H_0$ if</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$p_1 - p_2 \neq 0$</td>
+<td>$z$ &lt; $-z_{\alpha&#x2F;2}$ or $z &gt; z_{\alpha&#x2F;2}$</td>
+</tr>
+<tr>
+<td>$p_1-p_2 &lt; 0$</td>
+<td>$z &lt; -z_{\alpha}$</td>
+</tr>
+<tr>
+<td>$p_1-p_2 &gt; 0$</td>
+<td>$z &gt; z_{\alpha}$</td>
+</tr>
+</tbody></table>
+<h1 id="Correlation"><a href="#Correlation" class="headerlink" title="Correlation"></a>Correlation</h1><h2 id="Covariance"><a href="#Covariance" class="headerlink" title="Covariance"></a>Covariance</h2><p>positive relationship</p>
+<p>$S_{xy}&#x3D;\frac{1}{n} \sum\limits_{i&#x3D;1}^n(x_i-\bar{x})(y_i-\bar{y})&gt;0$</p>
+<p>Analogously, negative relationship betweeen $x_i$ and $y_i$, covariance $S_{xy}$  Negative</p>
+<h2 id="Pearson-Correlation-coefficient"><a href="#Pearson-Correlation-coefficient" class="headerlink" title="Pearson Correlation coefficient"></a>Pearson Correlation coefficient</h2><p>$r&#x3D;\frac{S_{xy}}{\sqrt{S_{xx}\cdot S_{yy}}}&#x3D;\frac{\sum\limits_{i&#x3D;1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum\limits_{i&#x3D;1}^n(x_i-\bar{x})^2\cdot \sum\limits_{i&#x3D;1}^n(y_i-\bar{y})^2}}$</p>
+<p>r close to 1 indicate a strong positive linear relationship;</p>
+<p>r close to -1 indicate a strong negative linear relationship</p>
+<p>r &#x3D; 0 indicates the lack of a linear relationship between x and y</p>
+<h2 id="Tests-of-H-0-rho-0"><a href="#Tests-of-H-0-rho-0" class="headerlink" title="Tests of $H_0: \rho&#x3D;0$"></a>Tests of $H_0: \rho&#x3D;0$</h2><p>$H_1: \rho \neq 0, H_1: \rho &lt; 0, H_1: \rho &gt; 0$</p>
+<p>$T &#x3D; \frac{R\sqrt{n-2}}{\sqrt{1-R^2}}$~ $t_{n-2}$</p>
+<table>
+<thead>
+<tr>
+<th>H1</th>
+<th>Reject $H_0$​﻿ if</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$\rho \neq 0$</td>
+<td>$t &lt; -t_{\alpha&#x2F;2,n-2}$ or $t &gt; t_{\alpha&#x2F;2,n-2}$</td>
+</tr>
+<tr>
+<td>$\rho&lt; 0$</td>
+<td>$t &lt; -t_{\alpha,n-2}$</td>
+</tr>
+<tr>
+<td>$\rho&gt;0$</td>
+<td>$t &gt; t_{\alpha,n-2}$</td>
+</tr>
+</tbody></table>
+<h1 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h1><h2 id="Simple-Linear-Regression"><a href="#Simple-Linear-Regression" class="headerlink" title="Simple Linear Regression"></a>Simple Linear Regression</h2><p>There are parameters $\beta_0, \beta_1, \sigma^2$ such that for any fixed value of the independent variable x, the dependent variable is related to x through the model equation</p>
+<p>$Y - \beta_0+\beta_1x+\epsilon$</p>
+<p>Assume the error quantity $\epsilon$~ $N(0,\sigma^2)$</p>
+<h3 id="Least-Squares-Estimates"><a href="#Least-Squares-Estimates" class="headerlink" title="Least Squares Estimates"></a>Least Squares Estimates</h3><p>Find values of $b_0$ and $b_1$ that minimize $\sum_{i&#x3D;1}^n(y_i-(b_0+b_1x_i))^2$</p>
+<p>$b_0-\hat{\beta_0}$ and $b_1-\hat{\beta_1}$ that minimize this quantity are the least squares estimates of $\beta_0$ and $\beta_1$</p>
+<p>In the case of simple linear regression</p>
+<p>$\hat{\beta_1}&#x3D;r \cdot \frac{S_y}{S_x}$, $\hat{\beta_0}&#x3D;\bar{y}-\hat{\beta_1}\bar{x}$</p>
+<p>$\hat{\beta_1}$ has the same sign as the correlation coefficient r</p>
+<p>$\hat{y}&#x3D;\hat{\beta_0}+\hat{\beta_1}x$</p>
+<h3 id="Assessing-Model-Fit"><a href="#Assessing-Model-Fit" class="headerlink" title="Assessing Model Fit"></a>Assessing Model Fit</h3><p><strong>residuals</strong></p>
+<p>$y_i-\hat{y_i}$</p>
+<h3 id="Prediction-Interval"><a href="#Prediction-Interval" class="headerlink" title="Prediction Interval"></a>Prediction Interval</h3><p>A range of values used to estimate a variable</p>
+<p>A range of plausible values for the corresponding value of y:</p>
+<p>$\hat{y} \pm t_{\alpha&#x2F;2,n-2}s_e \sqrt{1+\frac{1}{n}+\frac{n(x-\bar{x})^2}{n(\sum_{i&#x3D;1}^n x_i^2)-(\sum_{i&#x3D;1}^n x_i)^2}}$</p>
+<p>$s_e&#x3D;\sqrt{\frac{\sum_{i&#x3D;1}^n(y_i-\bar{y})}{n-2}}$</p>
+<p>Relies on the assumption that the errors $\epsilon$ are normally distributed with mean 0 and a shared standard deviation $\sigma$</p>
+<h3 id="Total-Variation"><a href="#Total-Variation" class="headerlink" title="Total Variation"></a>Total Variation</h3><p>$\sum_{i&#x3D;1}^n(y_i-\bar{y})^2$</p>
+<p>Decompose:</p>
+<p>$\sum_{i&#x3D;1}^n(y_i-\bar{y})^2&#x3D;\sum_{i&#x3D;1}^n(\hat{y_i}-\bar{y})^2+\sum_{i&#x3D;1}^n(y_i-\hat{y})^2$</p>
+<p><strong>total variation &#x3D; explained variation + unexplained variation</strong></p>
+<h3 id="Coefficient-of-determination"><a href="#Coefficient-of-determination" class="headerlink" title="Coefficient of determination"></a>Coefficient of determination</h3><p>$R^2&#x3D;\frac{\text{explained variation}}{\text{total variation}}$</p>
+<p>$0 \leq R^2 \leq 1$ Ideally $R^2$ close to 1</p>
+<p>In the case of simple linear regression $R^2&#x3D;r^2$</p>
+<h2 id="Multiple-Linear-Regression"><a href="#Multiple-Linear-Regression" class="headerlink" title="Multiple Linear Regression"></a>Multiple Linear Regression</h2><p>$Y &#x3D; \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k + \epsilon$</p>
+<p>Error term $\epsilon$ ~ $N(0, \sigma^2)$</p>
+<h3 id="Find-a-good-model"><a href="#Find-a-good-model" class="headerlink" title="Find a good model"></a>Find a good model</h3><ol>
+<li>Use domain knowledge to determine which likely useful variables</li>
+<li>Plot the residuals, which should look like random noise</li>
+<li>Create a normal Q-Q plot of the residuals to access. (Straight line)</li>
+<li>Examine $R_{adj}^2$</li>
+<li>Conduct a hypothesis test of $H_0:\beta_1 &#x3D; \beta_2 &#x3D; \cdots &#x3D;\beta_k &#x3D; 0$</li>
+</ol>
+<h3 id="Adjusted-Coefficient-of-Determination"><a href="#Adjusted-Coefficient-of-Determination" class="headerlink" title="Adjusted Coefficient of Determination"></a>Adjusted Coefficient of Determination</h3><p>n: sample size k: number of independent variables</p>
+<p>$R_{adj}^2 &#x3D; 1 - \frac{n-1}{n-(k+1)}(1-R^2)$</p>
+<h3 id="Formal-Test-of-Model-Utility"><a href="#Formal-Test-of-Model-Utility" class="headerlink" title="Formal Test of Model Utility"></a>Formal Test of Model Utility</h3><p>Assuming the residuals appear to be drawn from a normal distribution</p>
+<p>Hypotheses:</p>
+<p>$H_0: \beta_1 &#x3D; \beta_2&#x3D;\cdots&#x3D;\beta_k &#x3D; 0$</p>
+<p>$H_1: \text{at least one } \beta_i \neq 0$</p>
+<p>F-distribution</p>
+<h3 id="Dummy-variables"><a href="#Dummy-variables" class="headerlink" title="Dummy variables"></a>Dummy variables</h3><p>numerical encoding of a qualitative variable</p>
+<h1 id="Goodness-of-Fit"><a href="#Goodness-of-Fit" class="headerlink" title="Goodness-of-Fit"></a>Goodness-of-Fit</h1><h2 id="Pearson’s-Chi-Squared-Test"><a href="#Pearson’s-Chi-Squared-Test" class="headerlink" title="Pearson’s Chi-Squared Test"></a>Pearson’s Chi-Squared Test</h2><p>Test at level $\alpha$</p>
+<p>$H_0: p_1 &#x3D; p_{10}, p_2&#x3D;p_{20}, \cdots, p_k &#x3D; p_{k0}$</p>
+<p>$H_1: \text{at least one } p_i \text{ not equal to } p_{i0}$</p>
+<p>Check $np_{0i} \geq 5$</p>
+<p>Test statistic: $\chi ^2 &#x3D; \sum\limits_{i &#x3D; 1}^k \frac{(n_i - np_{i0})^2}{np_{i0}}$</p>
+<p>Reject $H_0$ if $\chi^2 &gt; \chi_{\alpha, k-1}^2$</p>
+<img src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202412061447093.png" style="zoom:50%;" />
+
+<h2 id="Caesar-Ciphers"><a href="#Caesar-Ciphers" class="headerlink" title="Caesar Ciphers"></a>Caesar Ciphers</h2><p>To encrypt text</p>
+<p>shift the alphabet the the left by a fixed amount</p>
+<h2 id="Contingency-Tables"><a href="#Contingency-Tables" class="headerlink" title="Contingency Tables"></a>Contingency Tables</h2><h3 id="Test-of-Homogeneity"><a href="#Test-of-Homogeneity" class="headerlink" title="Test of Homogeneity"></a>Test of Homogeneity</h3><p>Test at level $\alpha$</p>
+<p>$H_0: p_{1j}&#x3D;p_{2j}&#x3D;\cdots &#x3D; p_{Ij}$</p>
+<p>$H_1: H_0 \text{ is not true}$</p>
+<p>Check that $\hat{e_{ij}} \geq 5$ for each i and j</p>
+<p>test statistic</p>
+<p>$\chi^2 &#x3D; \sum\limits_{i&#x3D;1}^I \sum\limits_{j&#x3D;1}^J \frac{(n_{ij} - \hat{e_{ij}})^2}{\hat{e_{ij}}}$</p>
+<p>Reject $H_0$ at level $\alpha$ if $\chi ^2 &gt; \chi_{\alpha, (I-1)(J-1)}^2$</p>
+<h3 id="Test-of-Independence"><a href="#Test-of-Independence" class="headerlink" title="Test of Independence"></a>Test of Independence</h3><p>Test at level $\alpha$</p>
+<p>$H_0: p_{ij} &#x3D; p_i \cdot p_j$</p>
+<p>$H_1: H_0 \text{ is false}$</p>
+<p>Check that $\hat{e_{ij}} \geq 5$ for each i and j</p>
+<p>test statistic</p>
+<p>$\chi^2 &#x3D; \sum\limits_{i&#x3D;1}^I \sum\limits_{j&#x3D;1}^J \frac{(n_{ij} - \hat{e_{ij}})^2}{\hat{e_{ij}}}$</p>
+<p>Reject $H_0$ at level $\alpha$ if $\chi ^2 &gt; \chi_{\alpha, (I-1)(J-1)}^2$</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.fl334.com">fl_334</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.fl334.com/2024/12/06/stats/">https://www.fl334.com/2024/12/06/stats/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hypothesis-Testing/">Hypothesis Testing</a><a class="post-meta__tags" href="/tags/Confidence-Interval/">Confidence Interval</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/09/13/Bessel's%20correction/" title="Bessel's correction"><img class="cover" src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png" onerror="onerror=null;src='/img/404.GIF'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">Bessel's correction</div></div></a></div><div class="next-post pull-right"><a href="/2024/12/12/MMDS1/" title="MMDS 1"><img class="cover" src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404102124946.png" onerror="onerror=null;src='/img/404.GIF'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">MMDS 1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://blog-assets-334.oss-us-east-1.aliyuncs.com/img/202404101658804.webp" onerror="this.onerror=null;this.src='/img/404.GIF'" alt="avatar"/></div><div class="author-info__name">fl_334</div><div class="author-info__description">日々にシフト</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fl334" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:flames3340912@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://t.me/fl_334" target="_blank" title="telegram"><i class="fas fa-brands fa-telegram"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">New to Coding~ Yoroshiku~((>﹏<))</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Data-Visualisation"><span class="toc-number">1.</span> <span class="toc-text">Data Visualisation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Visualisation-Histogram"><span class="toc-number">1.1.</span> <span class="toc-text">Visualisation: Histogram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Skewness"><span class="toc-number">1.2.</span> <span class="toc-text">Skewness</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dot-plots"><span class="toc-number">1.3.</span> <span class="toc-text">Dot plots</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stem-plots-Stem-and-Leaf-plot"><span class="toc-number">1.4.</span> <span class="toc-text">Stem plots(Stem-and-Leaf plot)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Time-Series-Graph"><span class="toc-number">1.5.</span> <span class="toc-text">Time-Series Graph</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pie-Chart"><span class="toc-number">1.6.</span> <span class="toc-text">Pie Chart</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Frequency-Polygon"><span class="toc-number">1.7.</span> <span class="toc-text">Frequency Polygon</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pictograph"><span class="toc-number">1.8.</span> <span class="toc-text">Pictograph</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hints"><span class="toc-number">1.9.</span> <span class="toc-text">Hints</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Descriptive-Stat"><span class="toc-number">2.</span> <span class="toc-text">Descriptive Stat</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Measures-of-Variation"><span class="toc-number">3.</span> <span class="toc-text">Measures of Variation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Range"><span class="toc-number">3.1.</span> <span class="toc-text">Range</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Variance"><span class="toc-number">3.2.</span> <span class="toc-text">Variance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Standard-Deviation"><span class="toc-number">3.3.</span> <span class="toc-text">Standard Deviation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Standard-Scores-z-scores"><span class="toc-number">3.4.</span> <span class="toc-text">Standard Scores(z-scores)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Percentiles"><span class="toc-number">3.5.</span> <span class="toc-text">Percentiles</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#kth-Percentile"><span class="toc-number">3.5.1.</span> <span class="toc-text">kth Percentile</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IQR"><span class="toc-number">3.6.</span> <span class="toc-text">IQR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Boxplots"><span class="toc-number">3.7.</span> <span class="toc-text">Boxplots</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Modifies-Boxplots"><span class="toc-number">3.7.1.</span> <span class="toc-text">Modifies Boxplots</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Probability"><span class="toc-number">4.</span> <span class="toc-text">Probability</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Law-of-Large-Numbers"><span class="toc-number">4.1.</span> <span class="toc-text">Law of Large Numbers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Subjective-Probability"><span class="toc-number">4.2.</span> <span class="toc-text">Subjective Probability</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mutually-Exclusive-Events"><span class="toc-number">4.3.</span> <span class="toc-text">Mutually Exclusive Events</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bayes-Theorem"><span class="toc-number">4.4.</span> <span class="toc-text">Bayes Theorem</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Discrete-Probability-Distributions"><span class="toc-number">5.</span> <span class="toc-text">Discrete Probability Distributions</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Random-Variable"><span class="toc-number">5.1.</span> <span class="toc-text">Random Variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discrete-Random-Variables"><span class="toc-number">5.2.</span> <span class="toc-text">Discrete Random Variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Continuous-Random-Variables"><span class="toc-number">5.3.</span> <span class="toc-text">Continuous Random Variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discrete-Probability-Distribution"><span class="toc-number">5.4.</span> <span class="toc-text">Discrete Probability Distribution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mean-Variabnce-Standard-Deviation"><span class="toc-number">5.4.1.</span> <span class="toc-text">Mean&#x2F;Variabnce&#x2F;Standard Deviation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Binomial-Distribution"><span class="toc-number">6.</span> <span class="toc-text">Binomial Distribution</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Binomial-Random-Variable"><span class="toc-number">6.1.</span> <span class="toc-text">Binomial Random Variable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probability-Mass-Function"><span class="toc-number">6.2.</span> <span class="toc-text">Probability Mass Function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mean-Variance-Standard-Deviation"><span class="toc-number">6.3.</span> <span class="toc-text">Mean&#x2F;Variance&#x2F;Standard Deviation</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Poisson-Distribution"><span class="toc-number">7.</span> <span class="toc-text">Poisson Distribution</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Probability-Density-Function"><span class="toc-number">8.</span> <span class="toc-text">Probability Density Function</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Standard-Normal-Distribution"><span class="toc-number">9.</span> <span class="toc-text">Standard Normal Distribution</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Normal-Distribution"><span class="toc-number">10.</span> <span class="toc-text">Normal Distribution</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mean-Variance-Standard-Deviation-1"><span class="toc-number">10.1.</span> <span class="toc-text">Mean&#x2F;Variance&#x2F;Standard Deviation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Standardise"><span class="toc-number">10.2.</span> <span class="toc-text">Standardise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sampling-Distribution"><span class="toc-number">10.3.</span> <span class="toc-text">Sampling Distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Central-Limit-Theorem"><span class="toc-number">10.4.</span> <span class="toc-text">Central Limit Theorem</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Point-and-Interval-Estimation"><span class="toc-number">11.</span> <span class="toc-text">Point and Interval Estimation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Point-Estimate"><span class="toc-number">11.1.</span> <span class="toc-text">Point Estimate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unbiased-Estimator"><span class="toc-number">11.2.</span> <span class="toc-text">Unbiased Estimator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Interval-Estimation"><span class="toc-number">11.3.</span> <span class="toc-text">Interval Estimation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normal-Confidence-Interval-for-mu-sigma-known"><span class="toc-number">11.4.</span> <span class="toc-text">Normal Confidence Interval for $\mu$($\sigma$ known)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normal-Confidence-Interval-for-mu-sigma-unknown"><span class="toc-number">11.5.</span> <span class="toc-text">Normal Confidence Interval for $\mu$($\sigma$ unknown)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t-distribution"><span class="toc-number">11.6.</span> <span class="toc-text">t distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Large-Sample-Confidence-Interval-for-mu"><span class="toc-number">11.7.</span> <span class="toc-text">Large Sample Confidence Interval for $\mu$</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Control-the-interval-width"><span class="toc-number">11.7.1.</span> <span class="toc-text">Control the interval width</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Confidence-Interval-for-p"><span class="toc-number">11.7.2.</span> <span class="toc-text">Confidence Interval for p</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hypothesis-Testing"><span class="toc-number">12.</span> <span class="toc-text">Hypothesis Testing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tests-of-H-0-mu-mu-0"><span class="toc-number">12.1.</span> <span class="toc-text">Tests of $H_0:\mu&#x3D;\mu_0$</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Inferences-from-Two-Samples"><span class="toc-number">13.</span> <span class="toc-text">Inferences from Two Samples</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Comparing-Independent-Populations"><span class="toc-number">13.1.</span> <span class="toc-text">Comparing Independent Populations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Confidence-Interval-for-mu-1-mu-2"><span class="toc-number">13.2.</span> <span class="toc-text">Confidence Interval for $\mu_1-\mu_2$</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Two-Sample-t-Test"><span class="toc-number">13.3.</span> <span class="toc-text">Two-Sample t Test</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pooled-t-Test"><span class="toc-number">13.4.</span> <span class="toc-text">Pooled t Test</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Paired-t-Test"><span class="toc-number">13.5.</span> <span class="toc-text">Paired t Test</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Confidence-Interval-for-mu-D"><span class="toc-number">13.6.</span> <span class="toc-text">Confidence Interval for $\mu_D$</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Comparing-Population-Proportions"><span class="toc-number">13.7.</span> <span class="toc-text">Comparing Population Proportions</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Correlation"><span class="toc-number">14.</span> <span class="toc-text">Correlation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Covariance"><span class="toc-number">14.1.</span> <span class="toc-text">Covariance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pearson-Correlation-coefficient"><span class="toc-number">14.2.</span> <span class="toc-text">Pearson Correlation coefficient</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tests-of-H-0-rho-0"><span class="toc-number">14.3.</span> <span class="toc-text">Tests of $H_0: \rho&#x3D;0$</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linear-Regression"><span class="toc-number">15.</span> <span class="toc-text">Linear Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Linear-Regression"><span class="toc-number">15.1.</span> <span class="toc-text">Simple Linear Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Least-Squares-Estimates"><span class="toc-number">15.1.1.</span> <span class="toc-text">Least Squares Estimates</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Assessing-Model-Fit"><span class="toc-number">15.1.2.</span> <span class="toc-text">Assessing Model Fit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Prediction-Interval"><span class="toc-number">15.1.3.</span> <span class="toc-text">Prediction Interval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Total-Variation"><span class="toc-number">15.1.4.</span> <span class="toc-text">Total Variation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Coefficient-of-determination"><span class="toc-number">15.1.5.</span> <span class="toc-text">Coefficient of determination</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multiple-Linear-Regression"><span class="toc-number">15.2.</span> <span class="toc-text">Multiple Linear Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Find-a-good-model"><span class="toc-number">15.2.1.</span> <span class="toc-text">Find a good model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adjusted-Coefficient-of-Determination"><span class="toc-number">15.2.2.</span> <span class="toc-text">Adjusted Coefficient of Determination</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Formal-Test-of-Model-Utility"><span class="toc-number">15.2.3.</span> <span class="toc-text">Formal Test of Model Utility</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dummy-variables"><span class="toc-number">15.2.4.</span> <span class="toc-text">Dummy variables</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Goodness-of-Fit"><span class="toc-number">16.</span> <span class="toc-text">Goodness-of-Fit</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pearson%E2%80%99s-Chi-Squared-Test"><span class="toc-number">16.1.</span> <span class="toc-text">Pearson’s Chi-Squared Test</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Caesar-Ciphers"><span class="toc-number">16.2.</span> <span class="toc-text">Caesar Ciphers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contingency-Tables"><span class="toc-number">16.3.</span> <span class="toc-text">Contingency Tables</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Test-of-Homogeneity"><span class="toc-number">16.3.1.</span> <span class="toc-text">Test of Homogeneity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Test-of-Independence"><span class="toc-number">16.3.2.</span> <span class="toc-text">Test of Independence</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/18/MMDS3/" title="MMDS 3">MMDS 3</a><time datetime="2024-12-18T11:04:30.000Z" title="Created 2024-12-18 06:04:30">2024-12-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/15/MMDS2/" title="MMDS 2">MMDS 2</a><time datetime="2024-12-15T09:01:43.000Z" title="Created 2024-12-15 04:01:43">2024-12-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/12/MMDS1/" title="MMDS 1">MMDS 1</a><time datetime="2024-12-12T19:32:17.000Z" title="Created 2024-12-12 14:32:17">2024-12-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By fl_334</div><div class="footer_custom_text">Ni-pah~</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-butterfly/4.13.0/js/search/local-search.min.js"></script></div></div></body></html>
